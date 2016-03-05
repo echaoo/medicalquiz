@@ -1,0 +1,17 @@
+spring:
+  thymeleaf:
+      mode: LEGACYHTML5
+  datasource:
+    url: jdbc:mysql://121.42.201.69:3306/zmk
+    username: zmk
+    password: 123456
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+server:
+  port: 8081

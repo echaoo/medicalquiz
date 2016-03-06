@@ -12,7 +12,7 @@ public class Participator {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private int admissionnum;
+    private int admissionnum;//住院号
     private char sex;
     private int age;
     private int number;

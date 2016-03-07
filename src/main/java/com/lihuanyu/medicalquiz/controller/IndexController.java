@@ -1,6 +1,7 @@
 package com.lihuanyu.medicalquiz.controller;
 
 import com.lihuanyu.medicalquiz.model.Datum;
+import com.lihuanyu.medicalquiz.model.Participator;
 import com.lihuanyu.medicalquiz.services.CreateMessage;
 import com.lihuanyu.medicalquiz.services.CreateTest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,16 +22,17 @@ public class IndexController {
     private CreateTest createTest;
 
     @RequestMapping("/")
-    public String essencialMessage(int id, int admissionnum, String name, int age, int number, char sex, String birth) {
-        String result = createMessage.saveMessage(id, admissionnum, name, age, number, sex, birth);
-        if (result.equals("success")) {
-            return "test";//跳转到后面的测试页面
-        } else {
-            return "false";//返回错误页面，表单提交失败
-        }
+    public String essencialMessage() {
+        return "index";
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.POST)
+    public String savebasic(int admissionnum,String name,int age,int number,char sex,String birth){
+        createMessage.saveMessage(admissionnum,name,age,number,sex,birth);
+        return "test";
+    }
+
+    @RequestMapping(value = "/save",method = RequestMethod.POST)
     public String test(Datum datum) {
         String result = createTest.saveTest(datum);
         int score = datum.getScore();

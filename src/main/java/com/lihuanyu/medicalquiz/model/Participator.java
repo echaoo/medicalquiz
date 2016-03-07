@@ -16,9 +16,15 @@ public class Participator {
     private char sex;
     private int age;
     private int number;
-    private String  name;
+    private String name;
     private String birth;
 
+    public String getBirth() {
+        return birth;
+    }
+    public void setBirth(String birth) {
+        this.birth = birth;
+    }
 
     public int getNumber() {
         return number;
@@ -27,11 +33,6 @@ public class Participator {
     public void setNumber(int number) {
         this.number = number;
     }
-
-    public void setBirth(String birth) {
-        this.birth = birth;
-    }
-
 
     public int getId() {
         return id;

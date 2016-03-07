@@ -14,11 +14,10 @@ public class CreateMessage {
     @Autowired
     private ParticipatorDao participatorDao;
 
-    public String saveMessage(int id,int admissionnum,String name,int age,int number,char sex,String birth){
+    public String saveMessage(int admissionnum,String name,int age,int number,char sex,String birth){
         Participator participator = new Participator();
         participator.setAdmissionnum(admissionnum);
         participator.setAge(age);
-        participator.setId(id);
         participator.setBirth(birth);
         participator.setName(name);
         participator.setNumber(number);

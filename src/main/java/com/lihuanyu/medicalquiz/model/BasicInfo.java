@@ -63,7 +63,7 @@ public class BasicInfo {
     private String socialstate;
     private String hobby;//多选怎么办
     private String eathabits;
-    
+
     public int getId() {
         return id;
     }

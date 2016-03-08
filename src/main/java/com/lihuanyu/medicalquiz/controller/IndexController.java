@@ -28,7 +28,7 @@ public class IndexController {
     @Autowired
     private BasicInfoDao basicInfoDao;
 
-    @RequestMapping(value = "basicinfoform",method = RequestMethod.POST)
+    @RequestMapping(value = "/savebasic",method = RequestMethod.POST)
     public String saveBasicinform(String education,String occupation,String married ){
         int adminnum = (int) httpSession.getAttribute("adminnum");
         BasicInfo basicInfo = new BasicInfo();

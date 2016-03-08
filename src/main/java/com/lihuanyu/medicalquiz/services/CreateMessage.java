@@ -14,7 +14,7 @@ public class CreateMessage {
     @Autowired
     private ParticipatorDao participatorDao;
 
-    public String saveMessage(int admissionnum,String name,int age,int number,char sex,String birth){
+    public String saveMessage(int admissionnum, String name, int age, String number, char sex, String birth){
         Participator participator = new Participator();
         participator.setAdmissionnum(admissionnum);
         participator.setAge(age);

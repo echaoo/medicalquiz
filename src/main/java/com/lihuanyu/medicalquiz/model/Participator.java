@@ -1,7 +1,6 @@
 package com.lihuanyu.medicalquiz.model;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 /**
  * Created by echao on 2016/3/4.
@@ -15,7 +14,7 @@ public class Participator {
     private int admissionnum;//住院号
     private char sex;
     private int age;
-    private int number;
+    private String number;
     private String name;
     private String birth;
 
@@ -26,11 +25,11 @@ public class Participator {
         this.birth = birth;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 

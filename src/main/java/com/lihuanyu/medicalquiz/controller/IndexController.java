@@ -16,7 +16,7 @@ public class IndexController {
     private CreateMessage createMessage;
 
     @RequestMapping(value = "/savenew",method = RequestMethod.POST)
-    public String saveNew(int admissionnum,String name,int age,int number,char sex,String birth){
+    public String saveNew(int admissionnum,String name,int age,String number,char sex,String birth){
         createMessage.saveMessage(admissionnum,name,age,number,sex,birth);
         return "basicinfoform";
     }

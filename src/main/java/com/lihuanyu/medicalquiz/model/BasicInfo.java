@@ -1,9 +1,17 @@
 package com.lihuanyu.medicalquiz.model;
 
+import javax.persistence.*;
+
 /**
  * Created by echao on 2016/3/8.
  */
-public class BaicInfo {
+@Entity
+@Table(name = "basicinfo")
+public class BasicInfo {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
 
     private String name;
     private int adminnum;
@@ -55,7 +63,14 @@ public class BaicInfo {
     private String socialstate;
     private String hobby;//多选怎么办
     private String eathabits;
+    
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getAdminnum() {
         return adminnum;

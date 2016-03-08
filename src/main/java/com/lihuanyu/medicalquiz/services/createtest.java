@@ -1,7 +1,7 @@
 package com.lihuanyu.medicalquiz.services;
 
-import com.lihuanyu.medicalquiz.model.BaicInfo;
-import com.lihuanyu.medicalquiz.model.BaicInfoDao;
+import com.lihuanyu.medicalquiz.model.BasicInfo;
+import com.lihuanyu.medicalquiz.model.BasicInfoDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,14 +12,14 @@ import org.springframework.stereotype.Service;
 public class CreateTest {
 
     @Autowired
-    private BaicInfoDao baicInfoDao;
+    private BasicInfoDao basicInfoDao;
 
     public String saveTest(String education,String occupation,String married ){
-        BaicInfo baicInfo = new BaicInfo();
-        baicInfo.setEducation(education);
-        baicInfo.setOccupation(occupation);
-        baicInfo.setMarital(married);
-        baicInfoDao.save(baicInfo);
+        BasicInfo basicInfo = new BasicInfo();
+        basicInfo.setEducation(education);
+        basicInfo.setOccupation(occupation);
+        basicInfo.setMarital(married);
+        basicInfoDao.save(basicInfo);
         return "success";
 
     }

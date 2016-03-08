@@ -26,14 +26,14 @@ public class IndexController {
     private HttpSession httpSession;
 
     @Autowired
-    private BaicInfoDao baicInfoDao;
+    private BasicInfoDao basicInfoDao;
 
     @RequestMapping(value = "basicinfoform",method = RequestMethod.POST)
     public String saveBasicinform(String education,String occupation,String married ){
         int adminnum = (int) httpSession.getAttribute("adminnum");
-        BaicInfo baicInfo = new BaicInfo();
-        baicInfo.setAdminnum(adminnum);
-        baicInfoDao.save(baicInfo);
+        BasicInfo basicInfo = new BasicInfo();
+        basicInfo.setAdminnum(adminnum);
+        basicInfoDao.save(basicInfo);
         createTest.saveTest(education,occupation,married);
         return "testfour";
     }

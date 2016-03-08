@@ -48,8 +48,8 @@ public class AdminController {
     public String showDetail(int admissionnum, int admnum, int number, Model model) {
         Collection<Participator> participator = participatorDao.findByAdmissionnum(admissionnum);
         model.addAttribute("participator", participator);
-        Collection<Datum> datum = datumDao.findByAdmnum(admnum);
-        model.addAttribute("datum", datum);
+        //Collection<Datum> datum = datumDao.findByAdmnum(admnum);
+        //model.addAttribute("datum", datum);
         Collection<MMSE> mmses = mmseDao.findByNumber(number);
         model.addAttribute("MMSE", mmses);
         return "detail";//显示整张调查表的内容和结果

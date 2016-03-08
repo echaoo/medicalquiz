@@ -6,6 +6,7 @@ package com.lihuanyu.medicalquiz.model;
 public class BaicInfo {
 
     private String name;
+    private int adminnum;
     private String education;
     private String occupation;
     private String marital;//婚姻状况
@@ -54,6 +55,15 @@ public class BaicInfo {
     private String socialstate;
     private String hobby;//多选怎么办
     private String eathabits;
+
+
+    public int getAdminnum() {
+        return adminnum;
+    }
+
+    public void setAdminnum(int adminnum) {
+        this.adminnum = adminnum;
+    }
 
     public String getName() {
         return name;

@@ -1,0 +1,191 @@
+<!doctype html>
+<html class="no-js" lang="" xmlns="http://www.w3.org/1/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新患者注册</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="container">
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">患者信息处理系统</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Home</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>
+
+  <div class="jumbotron">
+    <h1>填写详细信息</h1>
+    <p class="lead"></p>
+    <form class="form-horizontal" method="post" action="savenew">
+      <div class="form-group">
+        <label for="education" class="col-sm-2 control-label">文化</label>
+        <div class="col-sm-10">
+          <input id="education" class="form-control" type="text" name="education">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="occupation" class="col-sm-2 control-label">职业</label>
+        <div class="col-sm-10">
+          <input id="occupation" class="form-control" type="text" name="occupation">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="marital" class="col-sm-2 control-label">婚姻状况</label>
+        <div class="col-sm-10">
+          <input id="marital" class="form-control" type="text" name="marital">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="live" class="col-sm-2 control-label">居住状况</label>
+        <div class="col-sm-10">
+          <input id="live" class="form-control" type="number" name="live">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="wherelive" class="col-sm-2 control-label">居住地</label>
+        <div class="col-sm-10">
+          <input id="wherelive" class="form-control" type="text" name="wherelive">
+        </div>
+      </div>
+      <p>既往病史</p>
+      <div class="form-group">
+        <label for="hypertension" class="col-sm-2 control-label">高血压</label>
+        <div class="col-sm-4">
+          <label for="hypertensionyes" class="control-label">有</label>
+          <input id="hypertensionyes" type="radio" name="hypertension" value="Y">
+          <label for="hypertensionno">没有</label>
+          <input id="hypertensionno" type="radio" name="hypertension" value="N">
+          <label for="hypertensiondontknow">不详</label>
+          <input id="hypertensiondontknow" type="radio" name="hypertension" value="D">
+        </div>
+        <label class="col-sm-3 control-label">患病时间(年)</label>
+        <div class="col-sm-2">
+          <input id="hypertension" class="form-control" type="number" name="hypertensiontime">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="diabetes" class="col-sm-2 control-label">糖尿病</label>
+        <div class="col-sm-4">
+          <label for="diabetesyes" class="control-label">有</label>
+          <input id="diabetesyes" type="radio" name="diabetes" value="Y">
+          <label for="diabetesno">没有</label>
+          <input id="diabetesno" type="radio" name="diabetes" value="N">
+          <label for="diabetesdontknow">不详</label>
+          <input id="diabetesdontknow" type="radio" name="diabetes" value="D">
+        </div>
+        <label class="col-sm-3 control-label">患病时间(年)</label>
+        <div class="col-sm-2">
+          <input id="diabetes" class="form-control" type="text" name="diabetestime">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="hyperlipemia" class="col-sm-2 control-label">高血脂</label>
+        <div class="col-sm-4">
+          <label for="hyperlipemiayes" class="control-label">有</label>
+          <input id="hyperlipemiayes" type="radio" name="hyperlipemia" value="Y">
+          <label for="hyperlipemiano">没有</label>
+          <input id="hyperlipemiano" type="radio" name="hyperlipemia" value="N">
+          <label for="hyperlipemiadontknow">不详</label>
+          <input id="hyperlipemiadontknow" type="radio" name="hyperlipemia" value="D">
+        </div>
+        <label class="col-sm-3 control-label">患病时间(年)</label>
+        <div class="col-sm-3">
+          <input id="hyperlipemia" class="form-control" type="text" name="hyperlipemiatime">
+        </div>
+        <label class="col-sm-4 control-label"> 三个月内检查指数: </label>
+        <div class="col-sm-8">
+          <input type="number">
+        </div>
+      </div>
+
+      <div class="form-inline">
+        <label>性别:</label>
+        <label for="Male">男</label>
+        <input type="radio" name="sex" id="Male">
+        <label for="Female">女</label>
+        <input type="radio" name="sex" id="Female">
+      </div>
+      <br/>
+      <input type="submit" class="btn btn-lg btn-success">
+    </form>
+  </div>
+
+
+  <div class="footer">
+    <p>♥ from the UPC - skyADMIN & Echaoo</p>
+  </div>
+</div>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js scripts/plugins.js -->
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
+</body>
+</html>
+

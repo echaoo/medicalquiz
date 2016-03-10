@@ -52,7 +52,7 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping("/new")
+    @RequestMapping("/regnew")
     public String showReg(){
         return "regpage";
     }

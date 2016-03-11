@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
+import javax.xml.crypto.Data;
+import java.sql.Date;
 
 /**
  * Created by echao on 2016/3/5.
@@ -44,6 +46,7 @@ public class IndexController {
         datum.setFour2(ques2);
         datum.setFour3(ques3);
         datum.setFour4(ques4);
+        datum.setTexttime((Data) new Date(System.currentTimeMillis()));
         int score = ques1 + ques2 + ques3 + ques4;
         datum.setScore(score);
         datumDao.save(datum);

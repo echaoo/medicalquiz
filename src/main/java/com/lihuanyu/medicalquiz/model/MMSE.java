@@ -16,20 +16,20 @@ public class MMSE {
     private int age;
     private String name;
     private int five1;
-    private String five2;
-    private String five3;
-    private String five4;
-    private String five5;
-    private String five6;
-    private String five7;
-    private String five8;
-    private String five9;
-    private String five10;
+    private int five2;
+    private int five3;
+    private int five4;
+    private int five5;
+    private int five6;
+    private int five7;
+    private int five8;
+    private int five9;
+    private int five10;
     private int five11;
     private int  five12;
     private int five13;
-    private String five14;
-    private String five15;
+    private int five14;
+    private int five15;
     private int five16;
     private int five17;
     private int five18;
@@ -37,13 +37,6 @@ public class MMSE {
     private int five20;
     private int score;
 
-    public String getFive6() {
-        return five6;
-    }
-
-    public void setFive6(String five6) {
-        this.five6 = five6;
-    }
 
     public int getId() {
         return id;
@@ -77,13 +70,6 @@ public class MMSE {
         this.age = age;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getFive1() {
         return five1;
@@ -91,70 +77,6 @@ public class MMSE {
 
     public void setFive1(int five1) {
         this.five1 = five1;
-    }
-
-    public String getFive2() {
-        return five2;
-    }
-
-    public void setFive2(String five2) {
-        this.five2 = five2;
-    }
-
-    public String getFive3() {
-        return five3;
-    }
-
-    public void setFive3(String five3) {
-        this.five3 = five3;
-    }
-
-    public String getFive4() {
-        return five4;
-    }
-
-    public void setFive4(String five4) {
-        this.five4 = five4;
-    }
-
-    public String getFive5() {
-        return five5;
-    }
-
-    public void setFive5(String five5) {
-        this.five5 = five5;
-    }
-
-    public String getFive7() {
-        return five7;
-    }
-
-    public void setFive7(String five7) {
-        this.five7 = five7;
-    }
-
-    public String getFive8() {
-        return five8;
-    }
-
-    public void setFive8(String five8) {
-        this.five8 = five8;
-    }
-
-    public String getFive9() {
-        return five9;
-    }
-
-    public void setFive9(String five9) {
-        this.five9 = five9;
-    }
-
-    public String getFive10() {
-        return five10;
-    }
-
-    public void setFive10(String five10) {
-        this.five10 = five10;
     }
 
     public int getFive11() {
@@ -179,22 +101,6 @@ public class MMSE {
 
     public void setFive13(int five13) {
         this.five13 = five13;
-    }
-
-    public String getFive14() {
-        return five14;
-    }
-
-    public void setFive14(String five14) {
-        this.five14 = five14;
-    }
-
-    public String getFive15() {
-        return five15;
-    }
-
-    public void setFive15(String five15) {
-        this.five15 = five15;
     }
 
     public int getFive16() {
@@ -245,6 +151,102 @@ public class MMSE {
         this.score = score;
     }
 
+
+    public int getFive15() {
+        return five15;
+    }
+
+    public void setFive15(int five15) {
+        this.five15 = five15;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getFive2() {
+        return five2;
+    }
+
+    public void setFive2(int five2) {
+        this.five2 = five2;
+    }
+
+    public int getFive3() {
+        return five3;
+    }
+
+    public void setFive3(int five3) {
+        this.five3 = five3;
+    }
+
+    public int getFive4() {
+        return five4;
+    }
+
+    public void setFive4(int five4) {
+        this.five4 = five4;
+    }
+
+    public int getFive5() {
+        return five5;
+    }
+
+    public void setFive5(int five5) {
+        this.five5 = five5;
+    }
+
+    public int getFive6() {
+        return five6;
+    }
+
+    public void setFive6(int five6) {
+        this.five6 = five6;
+    }
+
+    public int getFive7() {
+        return five7;
+    }
+
+    public void setFive7(int five7) {
+        this.five7 = five7;
+    }
+
+    public int getFive8() {
+        return five8;
+    }
+
+    public void setFive8(int five8) {
+        this.five8 = five8;
+    }
+
+    public int getFive9() {
+        return five9;
+    }
+
+    public void setFive9(int five9) {
+        this.five9 = five9;
+    }
+
+    public int getFive10() {
+        return five10;
+    }
+
+    public void setFive10(int five10) {
+        this.five10 = five10;
+    }
+
+    public int getFive14() {
+        return five14;
+    }
+
+    public void setFive14(int five14) {
+        this.five14 = five14;
+    }
 
 
 }

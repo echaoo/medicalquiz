@@ -1,6 +1,7 @@
 package com.lihuanyu.medicalquiz.model;
 
 import javax.persistence.*;
+import javax.xml.crypto.Data;
 
 /**
  * Created by echao on 2016/3/4.
@@ -20,6 +21,15 @@ public class Datum {
     private int four3;
     private int four4;
     private int score;
+    private Data texttime;
+
+    public Data getTexttime() {
+        return texttime;
+    }
+
+    public void setTexttime(Data texttime) {
+        this.texttime = texttime;
+    }
 
     public int getId() {
         return id;

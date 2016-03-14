@@ -58,7 +58,7 @@
     <!--进度条-->
     <div class="row">
       <div class="col-md-3">
-        <h4 style="margin-top: 0px">注册进度:1/3</h4>
+        <h4 id="regprogresstitle" style="margin-top: 0px">注册进度:1/3</h4>
       </div>
       <div class="col-md-9">
         <div class="progress">
@@ -71,144 +71,281 @@
     </div>
 
     <!--表单-->
-    <form class="form-horizontal" method="post">
-      <!--账号部分-->
-      <div style="margin-bottom: 40px">
-        <div class="row">
-          <div class="col-md-4 col-md-offset-5">
-            <h2>账号</h2>
+    <form class="form-horizontal" method="post" action="savenew">
+
+      <!--第一页-->
+      <div id="page1" style="display: none">
+        <!--账号部分-->
+        <div style="margin-bottom: 40px">
+          <div class="row">
+            <div class="col-md-4 col-md-offset-5">
+              <h2>账号</h2>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <div class="form-group">
-              <label for="phone" class="col-md-3 control-label">手机号</label>
-              <div class="col-md-6">
-                <input id="phone" class="form-control">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="form-group">
+                <label for="phone" class="col-md-3 control-label">手机号</label>
+                <div class="col-md-6">
+                  <input id="phone" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="realname" class="col-md-3 control-label">姓名</label>
+                <div class="col-md-6">
+                  <input id="realname" class="form-control">
+                </div>
               </div>
             </div>
-            <div class="form-group">
-              <label for="realname" class="col-md-3 control-label">姓名</label>
-              <div class="col-md-6">
-                <input id="realname" class="form-control">
+          </div>
+        </div>
+
+        <!--人口学资料-->
+        <div>
+          <div class="row">
+            <h2 class="col-md-offset-4 col-md-5">人口学资料</h2>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">性别</label>
+              <div class="col-md-8">
+                <select class="form-control" name="sex">
+                  <option>请选择</option>
+                  <option value="M">男</option>
+                  <option value="F">女</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">年龄</label>
+              <div class="col-md-8">
+                <input class="form-control" type="number" name="age" placeholder="阿拉伯数字">
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!--人口学资料-->
-      <div>
-        <div class="row">
-          <h2 class="col-md-offset-4 col-md-5">人口学资料</h2>
-        </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">编号</label>
+              <div class="col-md-8">
+                <input class="form-control" type="text" name="number">
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">生日</label>
+              <div class="col-md-8">
+                <input class="form-control" type="text" name="birth" placeholder="年/月/日">
+              </div>
+            </div>
+          </div>
 
-        <div class="row">
-          <div class="form-group col-md-6">
-            <label class="control-label col-md-4">性别</label>
-            <div class="col-md-8">
-              <select class="form-control" name="sex">
-                <option>请选择</option>
-                <option value="M">男</option>
-                <option value="F">女</option>
-              </select>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">文化水平</label>
+              <div class="col-md-8">
+                <select class="form-control" name="education">
+                  <option>请选择</option>
+                  <option value="文盲">文盲</option>
+                  <option value="小学">小学</option>
+                  <option value="初中">初中</option>
+                  <option value="高中或中专">高中或中专</option>
+                  <option value="大专">大专</option>
+                  <option value="大学及以上">大学及以上</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">职业</label>
+              <div class="col-md-8">
+                <select class="form-control" name="occupation">
+                  <option>请选择</option>
+                  <option value="干部">干部</option>
+                  <option value="技术人员">技术人员</option>
+                  <option value="工人">工人</option>
+                  <option value="农民">农民</option>
+                  <option value="军人">军人</option>
+                  <option value="个体">个体</option>
+                  <option value="运动员">运动员</option>
+                  <option value="其他">其他</option>
+                </select>
+              </div>
             </div>
           </div>
-          <div class="form-group col-md-6">
-            <label class="control-label col-md-4">年龄</label>
-            <div class="col-md-8">
-              <input class="form-control" type="number" name="age" placeholder="阿拉伯数字">
-            </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="form-group col-md-6">
-            <label class="control-label col-md-4">编号</label>
-            <div class="col-md-8">
-              <input class="form-control" type="text" name="number">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">婚姻状况</label>
+              <div class="col-md-8">
+                <select class="form-control" name="marital">
+                  <option>请选择</option>
+                  <option value="已婚">已婚</option>
+                  <option value="独生">独身</option>
+                  <option value="离婚">离婚</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">长期居住</label>
+              <div class="col-md-8">
+                <select class="form-control" name="wherelive">
+                  <option>请选择</option>
+                  <option value="农村">农村</option>
+                  <option value="城市">城市</option>
+                </select>
+              </div>
             </div>
           </div>
-          <div class="form-group col-md-6">
-            <label class="control-label col-md-4">生日</label>
-            <div class="col-md-8">
-              <input class="form-control" type="text" name="birth" placeholder="年/月/日">
-            </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="form-group col-md-6">
-            <label class="control-label col-md-4">文化水平</label>
-            <div class="col-md-8">
-              <select class="form-control" name="education">
-                <option>请选择</option>
-                <option value="文盲">文盲</option>
-                <option value="小学">小学</option>
-                <option value="初中">初中</option>
-                <option value="高中或中专">高中或中专</option>
-                <option value="大专">大专</option>
-                <option value="大学及以上">大学及以上</option>
-              </select>
+          <div class="row" style="margin-bottom: 20px">
+            <div class="form-group col-md-12">
+              <label class="control-label col-md-2">居住情况</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" placeholder="独居或与家人居住,时长几年?">
+              </div>
             </div>
           </div>
-          <div class="form-group col-md-6">
-            <label class="control-label col-md-4">职业</label>
-            <div class="col-md-8">
-              <select class="form-control" name="occupation">
-                <option>请选择</option>
-                <option value="干部">干部</option>
-                <option value="技术人员">技术人员</option>
-                <option value="工人">工人</option>
-                <option value="农民">农民</option>
-                <option value="军人">军人</option>
-                <option value="个体">个体</option>
-                <option value="运动员">运动员</option>
-                <option value="其他">其他</option>
-              </select>
-            </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="form-group col-md-6">
-            <label class="control-label col-md-4">婚姻状况</label>
-            <div class="col-md-8">
-              <select class="form-control" name="marital">
-                <option>请选择</option>
-                <option value="已婚">已婚</option>
-                <option value="独生">独身</option>
-                <option value="离婚">离婚</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group col-md-6">
-            <label class="control-label col-md-4">长期居住</label>
-            <div class="col-md-8">
-              <select class="form-control" name="wherelive">
-                <option>请选择</option>
-                <option value="农村">农村</option>
-                <option value="城市">城市</option>
-              </select>
+          <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+              <button id="nextpage1" type="button" class="btn btn-lg btn-success">下一页</button>
             </div>
           </div>
         </div>
 
-        <div class="row" style="margin-bottom: 20px">
-          <div class="form-group col-md-12">
-            <label class="control-label col-md-2">居住情况</label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" placeholder="独居或与家人居住,时长几年?">
+      </div><!--第一页结束-->
+
+      <!--第二页-->
+      <div id="page2">
+
+        <!--既往史-->
+        <div>
+          <div class="row">
+            <h2 class="col-md-offset-5 col-md-5" style="margin-bottom: 40px;margin-top: 20px;">既往史</h2>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label class="control-label col-md-2">高血压</label>
+              <div class="col-md-2">
+                <select id="hyperselect" class="form-control" name="hypertension">
+                  <option>请选择</option>
+                  <option value="yes">有</option>
+                  <option value="no">无</option>
+                  <option value="unknow">不详</option>
+                </select>
+              </div>
+              <div id="hyper" class="col-md-8" style="display: none">
+                <label class="col-md-3 control-label" for="hypertensiontime">患病时长</label>
+                <div class="col-md-3">
+                  <input id="hypertensiontime" type="number" class="form-control" placeholder="年" value="0">
+                </div>
+                <label class="col-md-2 control-label" for="hypertensiontime">最高</label>
+                <div class="col-md-4">
+                  <input id="hypertension" type="number" class="form-control" placeholder="mmHg" name="hypertionsion" value="0">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">年龄</label>
+              <div class="col-md-8">
+                <input class="form-control" type="number" name="age" placeholder="阿拉伯数字">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">编号</label>
+              <div class="col-md-8">
+                <input class="form-control" type="text" name="number">
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">生日</label>
+              <div class="col-md-8">
+                <input class="form-control" type="text" name="birth" placeholder="年/月/日">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">文化水平</label>
+              <div class="col-md-8">
+                <select class="form-control" name="education">
+                  <option>请选择</option>
+                  <option value="文盲">文盲</option>
+                  <option value="小学">小学</option>
+                  <option value="初中">初中</option>
+                  <option value="高中或中专">高中或中专</option>
+                  <option value="大专">大专</option>
+                  <option value="大学及以上">大学及以上</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">职业</label>
+              <div class="col-md-8">
+                <select class="form-control" name="occupation">
+                  <option>请选择</option>
+                  <option value="干部">干部</option>
+                  <option value="技术人员">技术人员</option>
+                  <option value="工人">工人</option>
+                  <option value="农民">农民</option>
+                  <option value="军人">军人</option>
+                  <option value="个体">个体</option>
+                  <option value="运动员">运动员</option>
+                  <option value="其他">其他</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">婚姻状况</label>
+              <div class="col-md-8">
+                <select class="form-control" name="marital">
+                  <option>请选择</option>
+                  <option value="已婚">已婚</option>
+                  <option value="独生">独身</option>
+                  <option value="离婚">离婚</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">长期居住</label>
+              <div class="col-md-8">
+                <select class="form-control" name="wherelive">
+                  <option>请选择</option>
+                  <option value="农村">农村</option>
+                  <option value="城市">城市</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" style="margin-bottom: 20px">
+            <div class="form-group col-md-12">
+              <label class="control-label col-md-2">居住情况</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" placeholder="独居或与家人居住,时长几年?">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+              <button id="nextpage2" type="button" class="btn btn-lg btn-success">下一页</button>
             </div>
           </div>
         </div>
+      </div><!--第二页结束-->
 
-        <div class="row">
-          <div class="col-md-offset-4 col-md-4">
-            <input type="submit" class="btn btn-lg btn-success" value="下一页">
-          </div>
-        </div>
-      </div>
+
     </form>
   </div>
 
@@ -240,6 +377,7 @@
 
 <!-- build:js scripts/main.js -->
 <script src="scripts/main.js"></script>
+<script src="scripts/reg.js"></script>
 <!-- endbuild -->
 </body>
 </html>

@@ -80,14 +80,22 @@
         <label class="radio-inline">
           <input type="radio" name="ques3" id="inlineRadio6" value="0">回答错误
         </label></p>
-      <p style="text-align: left">4、告诉受试者以下三种东西并让其重复一遍，一分钟后让他重复一遍：1、国旗 2、房子 3、皮球<br/>
+      <p style="text-align: left">4、告诉受试者以下三种东西并让其重复一遍，一分钟后让他重复一遍：1、国旗 2、房子 3、皮球【重复出一种得一分】<br/>
       <label class="radio-inline">
-        <input type="radio" name="ques4" id="inlineRadio7" value="1">回答正确
+        <input type="radio" name="ques4" id="inlineRadio7" value="3">3分
       </label>
+        <label class="radio-inline">
+          <input type="radio" name="ques4" id="inlineRadio8" value="2">2分
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="ques4" id="inlineRadio9" value="1">1分
+        </label>
       <label class="radio-inline">
-        <input type="radio" name="ques4" id="inlineRadio8" value="0">回答错误
+        <input type="radio" name="ques4" id="inlineRadio10" value="0">0分
       </label></p>
-
+      <p>
+        总得分：<span id="sumans">0</span>
+      </p>
       <input type="submit" class="btn btn-lg btn-primary" value="提交">
     </form>
   </div>
@@ -120,6 +128,7 @@
 
 <!-- build:js scripts/main.js -->
 <script src="scripts/main.js"></script>
+<script src="scripts/datum.js"></script>
 <!-- endbuild -->
 </body>
 </html>

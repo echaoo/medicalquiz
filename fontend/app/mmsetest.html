@@ -55,50 +55,186 @@
   </nav>
 
   <div class="jumbotron">
-    <h1>测试开始</h1>
-    <p class="lead"></p>
+    <h1 style="text-align: center">MMSE测试</h1>
+    <div></div>
+    <form action="savedatum" method="post">
+      <div style="line-height: 50px">
+        <p style="text-align: left">1、现在是哪一年？<br/>
+          <label class="radio-inline control-label" for="inlineRadio1"></label>
+          <input type="radio" name="ques1" id="inlineRadio1" value="1">回答正确<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques1" id="inlineRadio2" value="0">回答错误
+        </p>
+        <p style="text-align: left">2、今天是几月份？<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques2" id="inlineRadio3" value="1">回答正确
+          <br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques2" id="inlineRadio4" value="0">回答错误</p>
 
-    <form action="/savemmsetest">
-      <p style="text-align: left">1、今年是哪一年？
-        <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">回答正确
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="0">回答错误
-        </label>
-      <p style="text-align: left">2、今天是几号？
-        <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="1">回答正确
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="0">回答错误
-        </label>
-      <p style="text-align: left">3、今天是星期几？
-        <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="1">回答正确
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio6" value="0">回答错误
-        </label>
-      <p style="text-align: left">4、我们现在在那个国家？
-        <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio7" value="1">回答正确
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio8" value="0">回答错误
-        </label>
-      <p style="text-align: left">5、我们现在在那个市区？
-        <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio9" value="1">回答正确
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio10" value="0">回答错误
-        </label>
+        <p style="text-align: left">3、今天是星期几？<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques3" id="inlineRadio5" value="1">回答正确<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques3" id="inlineRadio6" value="0">回答错误
+        </p>
 
-      <input type="submit" class="btn btn-lg btn-primary" value="提交">
+        <p style="text-align: left">4、现在是什么季节<br/> <label
+          class="radio-inline"></label>
+          <input type="radio" name="ques4" id="inlineRadio7" value="1">回答正确<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques4" id="inlineRadio8" value="0">回答错误
+        </p>
+
+        <p style="text-align: left">5、现在是几号？<br/>
+          <label class="radio-inline control-label" for="inlineRadio1"></label>
+          <input type="radio" name="ques5" id="inlineRadio9" value="1">回答正确<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques5" id="inlineRadio10" value="0">回答错误
+        </p>
+        <p style="text-align: left">6、我们现在是哪个国家？<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques6" id="inlineRadio11" value="1">回答正确
+          <br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques6" id="inlineRadio12" value="0">回答错误</p>
+        <p style="text-align: left">7、我们现在是在哪个城市？<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques7" id="inlineRadio13" value="1">回答正确<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques7" id="inlineRadio14" value="0">回答错误
+        </p>
+
+        <p style="text-align: left">8、我们现在在哪个城区？<br/> <label
+          class="radio-inline"></label>
+          <input type="radio" name="ques8" id="inlineRadio15" value="1">回答正确<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques8" id="inlineRadio16" value="0">回答错误
+        </p>
+
+        <p style="text-align: left">9、这里是哪家医院？<br/>
+          <label class="radio-inline control-label" for="inlineRadio1"></label>
+          <input type="radio" name="ques9" id="inlineRadio17" value="1">回答正确<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques9" id="inlineRadio18" value="0">回答错误
+        </p>
+        <p style="text-align: left">10、这里是第几层楼？<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques10" id="inlineRadio19" value="1">回答正确
+          <br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques10" id="inlineRadio20" value="0">回答错误</p>
+
+        <p style="text-align: left">11、现在我说三样东西，我说完你重复一遍并记住，2分钟后还要问你：“树木”、“钟表”、“汽车”<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques11" id="inlineRadio21" value="1">重复出3个<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques11" id="inlineRadio22" value="1">重复出2个<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques11" id="inlineRadio23" value="1">重复出1个<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques11" id="inlineRadio24" value="0">重复出0个
+        </p>
+
+        <p style="text-align: left">12、请你算一算：100-7=____<br/>
+          <span style="padding-left: 30%">93-7=___<br/></span>
+          <span style="padding-left: 30%">86-7=___<br/></span>
+          <span style="padding-left: 30%">79-7=___<br/></span>
+          <span style="padding-left: 30%">72-7=___<br/></span>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques12" id="inlineRadio25" value="1">算对5个<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques12" id="inlineRadio26" value="1">算对4个<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques12" id="inlineRadio27" value="1">算对3个<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques12" id="inlineRadio28" value="1">算对2个<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques12" id="inlineRadio29" value="1">算对1个<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques12" id="inlineRadio30" value="0">算对0个
+        </p>
+
+        <p style="text-align: left">13、现在请你说出刚才让你记住的东西？<br/>
+          <label class="radio-inline control-label"></label>
+          <input type="radio" name="ques13" id="inlineRadio31" value="1">说出3个<br/>
+          <label class="radio-inline control-label"></label>
+          <input type="radio" name="ques13" id="inlineRadio32" value="1">说出2个<br/>
+          <label class="radio-inline control-label"></label>
+          <input type="radio" name="ques13" id="inlineRadio33" value="1">说出1个<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques13" id="inlineRadio34" value="0">说出0个
+        </p>
+        <p style="text-align: left">14、这个东西是什么？<br/>
+          <span style="padding-left: 8%"><img src="images/images.jpg" alt="手表" class="img-thumbnail"></span><br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques14" id="inlineRadio35" value="1">回答正确
+          <br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques14" id="inlineRadio36" value="0">回答错误</p>
+
+        <p style="text-align: left">15、这个东西是什么？<br/>
+          <span style="padding-left: 8%"><img src="images/pencial.jpg" alt="手表" class="img-thumbnail"></span><br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques15" id="inlineRadio37" value="1">回答正确<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques15" id="inlineRadio38" value="0">回答错误
+        </p>
+
+        <p style="text-align: left">16、跟着我说：四十四只石狮子<br/> <label
+          class="radio-inline"></label>
+          <input type="radio" name="ques16" id="inlineRadio39" value="1">说话清晰<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques16" id="inlineRadio40" value="0">不清晰
+        </p>
+
+        <p style="text-align: left">17、【情景模拟】我给你一张纸请按我说的去做：现在开始:"用手拿着这张纸，用两只手将它对折起来，放在你的腿上“。【根据具体的执行判断给分，下面选项对应的病情一次变差，请家属酌情打分】<br/>
+          <label class="radio-inline control-label" for="inlineRadio1"></label>
+          <input type="radio" name="ques17" id="inlineRadio41" value="3">正常执行<br/>
+          <label class="radio-inline control-label" for="inlineRadio1"></label>
+          <input type="radio" name="ques17" id="inlineRadio42" value="3">执行迟缓<br/>
+          <label class="radio-inline control-label" for="inlineRadio1"></label>
+          <input type="radio" name="ques18" id="inlineRadio43" value="3">执行艰难<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques18" id="inlineRadio44" value="0">执行错误
+        </p>
+        <p style="text-align: left">18、请您念一念这句话：”请闭上你的眼睛“，并按上面的去做【根据具体的执行判断给分，下面选项对应的病情一次变差，请家属酌情打分】<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques18" id="inlineRadio45" value="1">3分
+          <br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques18" id="inlineRadio46" value="1">2分
+          <br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques18" id="inlineRadio47" value="1">1分
+          <br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques18" id="inlineRadio48" value="0">0分</p>
+
+        <p style="text-align: left">19、请你写或说一个完整的句子【句子要求符合日常说话的结构和逻辑，家属根据所说句子的完整程度酌情打分】<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques19" id="inlineRadio49" value="1">句子完整且正常<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques19" id="inlineRadio50" value="0">句子不正常
+        </p>
+
+        <p style="text-align: left">20、请你照这个样子滑下来。<br/>
+          <span style="padding-left: 8%"><img src="images/painting.jpg" alt="" class="img-thumbnail"></span><br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques20" id="inlineRadio51" value="1">painting图形正确<br/>
+          <label class="radio-inline"></label>
+          <input type="radio" name="ques20" id="inlineRadio52" value="0">图形不完整
+        </p>
+
+      </div>
+      <div style="text-align: center">
+        <p>
+          总得分：<span id="sumans">0</span>
+        </p>
+        <input type="submit" class="btn btn-lg btn-primary" value="提交">
+      </div>
     </form>
   </div>
-
   <div class="footer">
     <p>♥ from the UPC - skyADMIN & Echaoo</p>
   </div>
@@ -127,6 +263,7 @@
 
 <!-- build:js scripts/main.js -->
 <script src="scripts/main.js"></script>
+<script src="scripts/datum.js"></script>
 <!-- endbuild -->
 </body>
 </html>

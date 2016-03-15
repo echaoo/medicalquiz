@@ -41,6 +41,10 @@ $(document).ready(function ($) {
     step3();
   });
 
+  $('#lastpage2').click(function(){
+    step2();
+  });
+
   $('#hyperselect').change(function(){
     var choose = $('#hyperselect').val();
     if (choose == 'yes'){

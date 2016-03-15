@@ -74,7 +74,7 @@
     <form class="form-horizontal" method="post" action="savenew">
 
       <!--第一页-->
-      <div id="page1" style="display: none">
+      <div id="page1">
         <!--账号部分-->
         <div style="margin-bottom: 40px">
           <div class="row">
@@ -216,7 +216,7 @@
       </div><!--第一页结束-->
 
       <!--第二页-->
-      <div id="page2">
+      <div id="page2" style="display: none">
 
         <!--既往史-->
         <div>
@@ -424,9 +424,128 @@
             </div>
           </div><!--上下页按钮-->
         </div>
+
       </div><!--第二页结束-->
 
+      <!--第三页-->
+      <div id="page3" style="display: none;">
 
+        <!--生活方式-->
+        <div>
+          <div class="row">
+            <h2 class="col-md-offset-5 col-md-5" style="margin-bottom: 40px;margin-top: 20px;">生活方式</h2>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">饮酒状况</label>
+              <div class="col-md-8">
+                <select id="drinkstate" class="form-control" name="drinkstate">
+                  <option>请选择</option>
+                  <option>过量饮酒</option>
+                  <option>饮酒</option>
+                  <option>不饮酒</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">吸烟状况</label>
+              <div class="col-md-8">
+                <select id="smoke" class="form-control" name="smoke">
+                  <option>请选择</option>
+                  <option>抽烟</option>
+                  <option>已戒烟</option>
+                  <option>不抽烟</option>
+                </select>
+              </div>
+            </div>
+          </div><!--吸烟饮酒状况-->
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">喝茶状况</label>
+              <div class="col-md-8">
+                <select class="form-control" name="drinkstate">
+                  <option>请选择</option>
+                  <option>喝茶</option>
+                  <option>不喝茶</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">睡眠状况</label>
+              <div class="col-md-8">
+                <select class="form-control" name="smoke">
+                  <option>请选择</option>
+                  <option>睡眠不足</option>
+                  <option>每天7-9小时</option>
+                  <option>睡眠过多</option>
+                </select>
+              </div>
+            </div>
+          </div><!--喝茶睡眠状况-->
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-5">体育锻炼状况</label>
+              <div class="col-md-7">
+                <select class="form-control" name="drinkstate">
+                  <option>请选择</option>
+                  <option>经常参加</option>
+                  <option>偶尔参加</option>
+                  <option>不参加</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-5">社会交往情况</label>
+              <div class="col-md-7">
+                <select class="form-control" name="smoke">
+                  <option>请选择</option>
+                  <option>经常参加</option>
+                  <option>偶尔参加</option>
+                  <option>不参加</option>
+                </select>
+              </div>
+            </div>
+          </div><!--体育/社交状况-->
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">业余爱好</label>
+              <div class="col-md-8">
+                <select class="form-control" name="drinkstate">
+                  <option>请选择</option>
+                  <option>有</option>
+                  <option>无</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label col-md-4">饮食</label>
+              <div class="col-md-8">
+                <select class="form-control" name="smoke">
+                  <option>请选择</option>
+                  <option>偏向荤食</option>
+                  <option>偏向素食</option>
+                  <option>经常高脂饮食</option>
+                  <option>经常吃甜食</option>
+                </select>
+              </div>
+            </div>
+          </div><!--爱好/饮食状况-->
+
+          <div class="row" style="margin-top: 20px">
+            <div class="col-md-offset-3 col-md-4">
+              <button type="submit" class="btn btn-lg btn-success" style="margin-bottom: 20px">提交</button>
+            </div>
+            <div class="col-md-4">
+              <button id="lastpage2" type="button" class="btn btn-lg btn-danger">上一页</button>
+            </div>
+          </div><!--上下页按钮-->
+        </div>
+
+      </div><!--第三页结束-->
 
 
     </form>

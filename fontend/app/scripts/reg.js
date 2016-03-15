@@ -29,8 +29,16 @@ function step3(){
 
 $(document).ready(function ($) {
 
+  $('#lastpage1').click(function(){
+    step1();
+  });
+
   $('#nextpage1').click(function(){
     step2();
+  });
+
+  $('#nextpage2').click(function(){
+    step3();
   });
 
   $('#hyperselect').change(function(){
@@ -39,6 +47,42 @@ $(document).ready(function ($) {
       $('#hyper').show();
     }else {
       $('#hyper').hide();
+    }
+  });
+
+  $('#diabetes').change(function(){
+    var choose = $('#diabetes').val();
+    if (choose == 'yes'){
+      $('#diabetestime').show();
+    }else {
+      $('#diabetestime').hide();
+    }
+  });
+
+  $('#hyperlipemia').change(function(){
+    var choose = $('#hyperlipemia').val();
+    if (choose == 'yes'){
+      $('.hyperlipemiatime').show();
+    }else {
+      $('.hyperlipemiatime').hide();
+    }
+  });
+
+  $('#angiocardiopathy').change(function(){
+    var choose = $('#angiocardiopathy').val();
+    if (choose == 'yes'){
+      $('#angiocardiopathytype').show();
+    }else {
+      $('#angiocardiopathytype').hide();
+    }
+  });
+
+  $('#ACVD').change(function(){
+    var choose = $('#ACVD').val();
+    if (choose == 'yes'){
+      $('#ACVDtype').show();
+    }else {
+      $('#ACVDtype').hide();
     }
   });
 

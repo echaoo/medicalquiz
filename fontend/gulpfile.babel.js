@@ -41,14 +41,22 @@ function lint(files, options) {
       .pipe($.eslint.format())
       .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
   };
-}
+};
+
 const testLintOptions = {
   env: {
     mocha: true
   }
 };
 
-gulp.task('lint', lint('app/scripts/**/*.js'));
+const buildOptions = {
+  "globals":{
+    "jQuery": true,
+    "$": true
+  }
+};
+
+gulp.task('lint', lint('app/scripts/**/*.js',buildOptions));
 gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
 gulp.task('html', ['styles', 'scripts'], () => {

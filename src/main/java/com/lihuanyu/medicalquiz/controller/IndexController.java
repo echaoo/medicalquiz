@@ -26,6 +26,12 @@ public class IndexController {
         return "mmsetest";
     }
 
+    @RequestMapping("/changeinfo")
+    public String changeInfo(){ return "regpage"; }
+
+    @RequestMapping("/test")
+    public String showTest(){ return "datumtest"; }
+
     @RequestMapping(value = "/savenew", method = RequestMethod.POST)
     public String saveNew() {
         return "datumtest";
@@ -36,7 +42,7 @@ public class IndexController {
         return "regpage";
     }
 
-    @RequestMapping("/usercenter")
+    @RequestMapping(value = "/usercenter",method = RequestMethod.POST)
     public String showUserCenter(){ return "personal"; }
 
     @RequestMapping("/")

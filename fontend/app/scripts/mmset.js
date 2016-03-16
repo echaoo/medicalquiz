@@ -1,7 +1,7 @@
 /**
  * Created by echao on 2016/3/14.
  */
-$(document).ready(function () {
+$(document).ready(function ($) {
   'use strict';
   $('input[type=radio]').click(function () {
     var a1 = parseInt($('input[name="ques1"]:checked').val() == null ? 0 : $('input[name="ques1"]:checked').val());

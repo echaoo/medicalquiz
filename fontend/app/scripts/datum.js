@@ -1,7 +1,7 @@
 /**
  * Created by echao on 2016/3/14.
  */
-$(document).ready(function () {
+$(document).ready(function ($) {
   'use strict';
   var ans1;
   $('input[type=radio]').click(function () {

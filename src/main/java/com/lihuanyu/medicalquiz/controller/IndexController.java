@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class IndexController {
 
-    @RequestMapping(value = "/savemmsetest", method = RequestMethod.POST)
+    @RequestMapping(value = "/savemmse", method = RequestMethod.POST)
     public String saveMmseTest() {
         return "finishtest";
     }

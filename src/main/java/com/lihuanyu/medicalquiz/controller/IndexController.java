@@ -16,45 +16,29 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class IndexController {
 
-    @Autowired
-    private CreateMessage createMessage;
-
-    @Autowired
-    private HttpSession httpSession;
-
-    @Autowired
-    private BasicInfoDao basicInfoDao;
-
-    @Autowired
-    private DatumDao datumDao;
-
-    @RequestMapping(value = "/savemmsetest",method = RequestMethod.POST)
-    public String saveMmseTest(){
+    @RequestMapping(value = "/savemmsetest", method = RequestMethod.POST)
+    public String saveMmseTest() {
         return "finishtest";
     }
 
-    @RequestMapping(value = "/savedatum",method = RequestMethod.POST)
-    public String saveDatum(){
+    @RequestMapping(value = "/savedatum", method = RequestMethod.POST)
+    public String saveDatum() {
         return "mmsetest";
     }
 
-    @RequestMapping(value = "/savebasic",method = RequestMethod.POST)
-    public String saveBasicinform(){
+    @RequestMapping(value = "/savenew", method = RequestMethod.POST)
+    public String saveNew() {
         return "datumtest";
     }
 
-    @RequestMapping(value = "/savenew",method = RequestMethod.POST)
-    public String saveNew(){
-        return "basicinfoform";
-    }
-
-    @RequestMapping("/")
-    public String showIndex(){
-        return "index";
-    }
-
     @RequestMapping("/regnew")
-    public String showReg(){
+    public String showReg() {
         return "regpage";
     }
+
+    @RequestMapping("/usercenter")
+    public String showUserCenter(){ return "personal"; }
+
+    @RequestMapping("/")
+    public String showIndex() { return "index"; }
 }

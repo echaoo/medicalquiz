@@ -56,11 +56,22 @@
   <div class="jumbotron">
     <h1>情景记忆编码测试</h1>
     <div>
-      <div class="picture">
-        <img id="pictureurl" src="images/painting.jpg">
+      <div id="description">
+        <h3>欢迎参加我们的实验</h3>
+        <p>下面共有40张风景图片,请认真观看每一幅图片,并判断每一幅图片是在室内还是室外,并尽量记住图片内容,每幅图片最多呈现八秒。观看结束后,可休息10分钟,再观看40张图片,判断每张图片是否看过。</p>
+        <button class="btn btn-primary" id="teststart">开始测试</button>
       </div>
-      <div class="count-down">
-        倒计时:<span id="timedown">8</span>秒
+      <div id="testcontent" style="display: none;">
+        <div class="picture">
+          <img id="pictureurl" src="" class="img-responsive" alt="Responsive image">
+        </div>
+        <div class="count-down">
+          倒计时:<span id="timedown">8</span>秒
+        </div>
+        <div>
+          <button id="in" class="btn btn-success">室内</button>
+          <button id="out" class="btn btn-danger">室外</button>
+        </div>
       </div>
     </div>
 

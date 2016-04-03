@@ -12,19 +12,19 @@ function fillForm(val) {
 
 function isChooseTrue(url, choose) {
   var arr = url.split(/[//.]/);
-  if (parseInt(arr[2]) <= 20){
-    if (choose == 'in'){
+  if (parseInt(arr[2]) <= 20) {
+    if (choose == 'in') {
       //right
       fillForm("1");
-    }else {
+    } else {
       //wrong
       fillForm("2");
     }
-  }else{
-    if (choose == "in"){
+  } else {
+    if (choose == "in") {
       //wrong
       fillForm("2");
-    }else {
+    } else {
       //right
       fillForm("1");
     }
@@ -33,16 +33,27 @@ function isChooseTrue(url, choose) {
 
 function countDownTime(currentTime, picUrl) {
   'use strict';
-
-  timedown = setInterval(function () {
-    if (currentTime <= 0) {
-      fillForm("0");
-      clearInterval(timedown);
-      $('#pictureurl').attr('src', picUrl);
-    }
-    $('#timedown').text(currentTime);
-    currentTime--;
-  }, 1000);
+  if (picUrl == '0') {
+    timedown = setInterval(function () {
+      if (currentTime <= 0) {
+        fillForm("0");
+        clearInterval(timedown);
+        alert("结束啦~");
+      }
+      $('#timedown').text(currentTime);
+      currentTime--;
+    }, 1000);
+  } else {
+    timedown = setInterval(function () {
+      if (currentTime <= 0) {
+        fillForm("0");
+        clearInterval(timedown);
+        $('#pictureurl').attr('src', picUrl);
+      }
+      $('#timedown').text(currentTime);
+      currentTime--;
+    }, 1000);
+  }
 }
 
 $(document).ready(function ($) {
@@ -89,7 +100,7 @@ $(document).ready(function ($) {
     'images/emtest1/37.bmp',
     'images/emtest1/38.bmp',
     'images/emtest1/39.bmp',
-    'images/emtest1/40.bmp'
+    'images/emtest1/40.bmp',
   ];
   var flag = 0;
   var time1;
@@ -100,36 +111,40 @@ $(document).ready(function ($) {
     time2 = d2.getTime();
     var time = time2 - time1;
     var url = $('#pictureurl').attr('src');
-    isChooseTrue(url,para);
+    isChooseTrue(url, para);
     clearInterval(timedown);
-    $('#pictureurl').attr('src',urls[flag]);
+    if (urls[flag] != '0') {
+      $('#pictureurl').attr('src', urls[flag]);
+    }else{
+      alert("结束啦!");
+    }
   }
-
-  urls.sort(function () {
-    return 0.5 - Math.random();
-  });//打乱顺序
 
   $('#pictureurl').load(function () {
     var d1 = new Date();
     time1 = d1.getTime();
-    if (flag <= 40) {
-      flag++;
-      countDownTime(8, urls[flag]);
-      console.log(flag);
-    }else{
-      alert("结束了!");
-    }
+    flag++;
+    countDownTime(8, urls[flag]);
+    console.log(flag);
   });
 
   $('#teststart').click(function () {
+    urls.sort(function () {
+      return 0.5 - Math.random();
+    });//打乱顺序
     $('#description').hide();
     $('#testcontent').show();
+    urls[40] = '0';
     $('#pictureurl').attr('src', urls[0]);
   });
 
-  $('#in').click(function(){clickChangePic("in")});
+  $('#in').click(function () {
+    clickChangePic("in")
+  });
 
-  $('#out').click(function(){clickChangePic("out")});
+  $('#out').click(function () {
+    clickChangePic("out")
+  });
 
 });
 

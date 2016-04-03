@@ -91,9 +91,19 @@ $(document).ready(function ($) {
     'images/emtest1/39.bmp',
     'images/emtest1/40.bmp'
   ];
-  var flag = 1;
+  var flag = 0;
   var time1;
   var time2;
+
+  function clickChangePic(para) {
+    var d2 = new Date();
+    time2 = d2.getTime();
+    var time = time2 - time1;
+    var url = $('#pictureurl').attr('src');
+    isChooseTrue(url,para);
+    clearInterval(timedown);
+    $('#pictureurl').attr('src',urls[flag]);
+  }
 
   urls.sort(function () {
     return 0.5 - Math.random();
@@ -102,8 +112,13 @@ $(document).ready(function ($) {
   $('#pictureurl').load(function () {
     var d1 = new Date();
     time1 = d1.getTime();
-    countDownTime(8, urls[flag]);
-    flag++;
+    if (flag <= 40) {
+      flag++;
+      countDownTime(8, urls[flag]);
+      console.log(flag);
+    }else{
+      alert("结束了!");
+    }
   });
 
   $('#teststart').click(function () {
@@ -112,27 +127,9 @@ $(document).ready(function ($) {
     $('#pictureurl').attr('src', urls[0]);
   });
 
-  $('#in').click(function () {
-    var d2 = new Date();
-    time2 = d2.getTime();
-    var time = time2 - time1;
-    var url = $('#pictureurl').attr('src');
-    isChooseTrue(url,"in");
-    clearInterval(timedown);
-    $('#pictureurl').attr('src',urls[flag]);
-    flag++;
-  });
+  $('#in').click(function(){clickChangePic("in")});
 
-  $('#out').click(function () {
-    var d2 = new Date();
-    time2 = d2.getTime();
-    var time = time2 - time1;
-    var url = $('#pictureurl').attr('src');
-    isChooseTrue(url,"out");
-    clearInterval(timedown);
-    $('#pictureurl').attr('src',urls[flag]);
-    flag++;
-  });
+  $('#out').click(function(){clickChangePic("out")});
 
 });
 

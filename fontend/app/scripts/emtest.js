@@ -3,8 +3,14 @@
  */
 
 var timedown;
+var correctrate = "";
 
-function endtest1() {
+function postresult(){
+  $.post( "test.php", { correct:correctrate , time: "2pm" } );
+}
+
+function endtest1(correctdata) {
+  postresult(correctdata);
   $('#testcontent').hide();
   $('#over').show();
 
@@ -21,17 +27,21 @@ function isChooseTrue(url, choose) {
   if (parseInt(arr[2]) <= 20) {
     if (choose == 'in') {
       //right
+      correctrate+="1";
       fillForm("1");
     } else {
       //wrong
+      correctrate+="2";
       fillForm("2");
     }
   } else {
     if (choose == "in") {
       //wrong
+      correctrate+="2";
       fillForm("2");
     } else {
       //right
+      correctrate+="1";
       fillForm("1");
     }
   }

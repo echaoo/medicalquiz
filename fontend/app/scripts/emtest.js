@@ -4,6 +4,12 @@
 
 var timedown;
 
+function endtest1() {
+  $('#testcontent').hide();
+  $('#over').show();
+
+}
+
 function fillForm(val) {
   var now = $('#emtestresult1').val();
   now = now + val;
@@ -38,7 +44,7 @@ function countDownTime(currentTime, picUrl) {
       if (currentTime <= 0) {
         fillForm("0");
         clearInterval(timedown);
-        alert("结束啦~");
+        endtest1();
       }
       $('#timedown').text(currentTime);
       currentTime--;
@@ -116,7 +122,7 @@ $(document).ready(function ($) {
     if (urls[flag] != '0') {
       $('#pictureurl').attr('src', urls[flag]);
     }else{
-      alert("结束啦!");
+      endtest1();
     }
   }
 

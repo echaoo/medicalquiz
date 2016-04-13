@@ -144,11 +144,11 @@ $(document).ready(function ($) {
     console.log(flag);
   });
 
-  $('#teststart').click(function () {
+  $('#teststart1').click(function () {
     urls.sort(function () {
       return 0.5 - Math.random();
     });//打乱顺序
-    $('#description').hide();
+    $('#description1').hide();
     $('#testcontent').show();
     urls[40] = '0';
     $('#pictureurl').attr('src', urls[0]);
@@ -162,5 +162,9 @@ $(document).ready(function ($) {
     clickChangePic("out")
   });
 
+  $('#teststart').click(function () {
+    $('#over').hide();
+    $('#testcontent').show();
+  });
 });
 

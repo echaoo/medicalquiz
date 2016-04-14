@@ -14,21 +14,27 @@ public class BasicInfo {
     private int id;
 
     private String name;
-    private int adminnum;
+    private String phonenumber;
+
+    //人口学资料
+    private char sex;
+    private int year;
+    private int number;
+    private String birthtime;
     private String education;
     private String occupation;
     private String marital;//婚姻状况
     private String live;//居住状况
     private String wherelive;//居住地
 
-    //第二项
-    private char hypertension;//高血压
-    private int hypertensiontime;
-    private int hypertionsion;
-    private char diabetes;//糖尿病
-    private int diabetestime;
-    private char hyperlipemia;//高血脂
-    private int hyperlipemiatime;
+    //既往史
+    private char hypertension;//高血压 有Y无N不详U
+    private int hypertensiontime; //患病时长
+    private int hypertionsion; //最高mmhg
+    private char diabetes;//糖尿病 有Y无N
+    private int diabetestime; //患病时长
+    private char hyperlipemia;//高血脂 有Y无N不详U
+    private int hyperlipemiatime; //患病时长
     private int LDLC;
     private int HDLC;
     private int TC;
@@ -37,28 +43,22 @@ public class BasicInfo {
     private int heartpaintime;//心绞痛
     private int myocardial;//心肌梗死
     private int AF;//心房纤颤
-    private char ACVD;//脑血管病
+
+    private char ACVD;//脑血管病 有Y无N
     private int headblood;//脑出血
     private int chocke;//腔梗
-    private int headchocke;//脑梗死；
+    private int headchocke;//脑梗死
     private int TIA;
     private int headhurt;
     private String illposition;//脑病变部位
-    private int illlevel;
-    private String habitus;//体型
-    private int weight;
-    private float height;
-    private float BIM;
+    private String illlevel;
 
-    //第三项
+
+    //生活方式
     private String drinkstate;
     private String smoke;
-    private int firstsmokeage;
-    private int smokecount;
     private String isdrinktea;
     private String sleepstate;
-    private char afternoonnap;
-    private String snore;
     private String PEstate;
     private String socialstate;
     private String hobby;//多选怎么办
@@ -72,20 +72,52 @@ public class BasicInfo {
         this.id = id;
     }
 
-    public int getAdminnum() {
-        return adminnum;
-    }
-
-    public void setAdminnum(int adminnum) {
-        this.adminnum = adminnum;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
+    public char getSex() {
+        return sex;
+    }
+
+    public void setSex(char sex) {
+        this.sex = sex;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public String getBirthtime() {
+        return birthtime;
+    }
+
+    public void setBirthtime(String birthtime) {
+        this.birthtime = birthtime;
     }
 
     public String getEducation() {
@@ -304,44 +336,12 @@ public class BasicInfo {
         this.illposition = illposition;
     }
 
-    public int getIlllevel() {
+    public String getIlllevel() {
         return illlevel;
     }
 
-    public void setIlllevel(int illlevel) {
+    public void setIlllevel(String illlevel) {
         this.illlevel = illlevel;
-    }
-
-    public String getHabitus() {
-        return habitus;
-    }
-
-    public void setHabitus(String habitus) {
-        this.habitus = habitus;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public float getHeight() {
-        return height;
-    }
-
-    public void setHeight(float height) {
-        this.height = height;
-    }
-
-    public float getBIM() {
-        return BIM;
-    }
-
-    public void setBIM(float BIM) {
-        this.BIM = BIM;
     }
 
     public String getDrinkstate() {
@@ -360,22 +360,6 @@ public class BasicInfo {
         this.smoke = smoke;
     }
 
-    public int getFirstsmokeage() {
-        return firstsmokeage;
-    }
-
-    public void setFirstsmokeage(int firstsmokeage) {
-        this.firstsmokeage = firstsmokeage;
-    }
-
-    public int getSmokecount() {
-        return smokecount;
-    }
-
-    public void setSmokecount(int smokecount) {
-        this.smokecount = smokecount;
-    }
-
     public String getIsdrinktea() {
         return isdrinktea;
     }
@@ -390,22 +374,6 @@ public class BasicInfo {
 
     public void setSleepstate(String sleepstate) {
         this.sleepstate = sleepstate;
-    }
-
-    public char getAfternoonnap() {
-        return afternoonnap;
-    }
-
-    public void setAfternoonnap(char afternoonnap) {
-        this.afternoonnap = afternoonnap;
-    }
-
-    public String getSnore() {
-        return snore;
-    }
-
-    public void setSnore(String snore) {
-        this.snore = snore;
     }
 
     public String getPEstate() {

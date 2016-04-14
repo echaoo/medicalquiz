@@ -70,12 +70,20 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th>序号</th>
-        <th>测试详情</th>
-        <th>测试时间</th>
-        <th>备注</th>
+        <th>测试编号</th>
+        <th>Datum测试分数</th>
+        <th>MMSE测试分数</th>
+        <th>详情</th>
       </tr>
       </thead>
+      <tbody>
+      <tr th:each="testInfo:${testInfos}">
+        <td th:text="${testInfo.id}">id</td>
+        <td th:text="${testInfo.createtime}">分数1</td>
+        <td th:text="${testInfo.ispass}">分数2</td>
+        <td><a th:href="@{/detail(testid=${testInfo.id})}">详情</a></td>
+      </tr>
+      </tbody>
     </table>
   </div>
 

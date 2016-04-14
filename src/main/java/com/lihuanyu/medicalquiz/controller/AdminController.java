@@ -16,12 +16,6 @@ import java.util.Collection;
 public class AdminController {
 
 
-    @Autowired
-    private DatumDao datumDao;
-
-    @Autowired
-    private MMSEDao mmseDao;
-
     @RequestMapping("/admin")
     public String showLogin() {
         return "loginadmin";
@@ -48,8 +42,6 @@ public class AdminController {
         //model.addAttribute("participator", participator);
         //Collection<Datum> datum = datumDao.findByAdmnum(admnum);
         //model.addAttribute("datum", datum);
-        Collection<MMSE> mmses = mmseDao.findByNumber(number);
-        model.addAttribute("MMSE", mmses);
         return "detail";//显示整张调查表的内容和结果
     }
 

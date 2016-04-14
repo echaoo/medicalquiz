@@ -3,71 +3,82 @@
  */
 
 var timedown;
-var correctrate1 = "";
-var correctrate2 = "";
-var usetime = "";
+var correctrate1 = '';
+var correctrate2 = '';
+var usetime = '';
 
-function postresult(url,correctrate,time) {
+function postresult(url, correctrate, time) {
+  'use strict';
   $.post(url, {correct: correctrate, time: time});
 }
 
+function clearTime() {
+  'use strict';
+  usetime = '';
+}
+
+function recodeTime(usertime) {
+  'use strict';
+  usetime += (usertime + ';');
+  return usetime;
+}
+
 function endtest1(paratime) {
+  'use strict';
   var url1 = '/saveemtest1';
   var correctrate = correctrate1;
   var time = recodeTime(paratime);
-  postresult(url1, correctrate,time);
+  postresult(url1, correctrate, time);
   clearTime();
   $('#testcontent').hide();
   $('#over1').show();
 }
 
 function endtest2(paratime) {
+  'use strict';
   var correctrate = correctrate2;
   var url2 = '/saveemtest2';
   var time = recodeTime(paratime);
-  postresult(url2, correctrate,time);
+  postresult(url2, correctrate, time);
   clearTime();
   $('#testcontent').hide();
   $('#over2').show();
 }
 
-function clearTime(){
-  usetime = '';
-}
-function recodeTime(usertime){
-  usetime += (usertime+';');
-  return usetime;
-}
 function isChooseTrue(url, choose) {
+  'use strict';
   var arr = url.split(/[//.]/);
   if (parseInt(arr[2]) <= 20) {
-    if (choose == 'in') {
+    if (choose === 'in') {
       //right
-      correctrate1 += "1";
+      correctrate1 += '1';
     } else {
       //wrong
-      correctrate1 += "2";
+      correctrate1 += '2';
     }
   } else {
-    if (choose == "in") {
+    if (choose === 'in') {
       //wrong
-      correctrate1 += "2";
+      correctrate1 += '2';
     } else {
       //right
-      correctrate1 += "1";
+      correctrate1 += '1';
     }
   }
 }
 function isTrue(choose) {
-  if (choose == "yes") {
-    correctrate2 += 1;
-  } else if (choose == "maybe") {
-    correctrate2 += 2;
-  } else correctrate2 += 0;
+  'use strict';
+  if (choose === 'yes') {
+    correctrate2 += '1';
+  } else if (choose === 'maybe') {
+    correctrate2 += '2';
+  } else{
+    correctrate2 += '0';
+  }
 }
 function countDownTime(currentTime, picUrl) {
   'use strict';
-  if (picUrl == '0') {
+  if (picUrl === '0') {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
         clearInterval(timedown);
@@ -133,7 +144,7 @@ $(document).ready(function ($) {
     'images/emtest1/37.bmp',
     'images/emtest1/38.bmp',
     'images/emtest1/39.bmp',
-    'images/emtest1/40.bmp',
+    'images/emtest1/40.bmp'
   ];
   var flag = 0;
   var time1;
@@ -157,7 +168,7 @@ $(document).ready(function ($) {
     isChooseTrue(url, para);
     recodeTime(usetime1);
     clearInterval(timedown);
-    if (urls[flag] != '0') {
+    if (urls[flag] !== '0') {
       $('#pictureurl').attr('src', urls[flag]);
     } else {
       endtest1(usetime1);
@@ -180,11 +191,11 @@ $(document).ready(function ($) {
   });
 
   $('#in').click(function () {
-    clickChangePic("in")
+    clickChangePic('in');
   });
 
   $('#out').click(function () {
-    clickChangePic("out")
+    clickChangePic('out');
   });
 
 //显示第二次测试
@@ -197,11 +208,11 @@ $(document).ready(function ($) {
     var d2 = new Date();
     time2 = d2.getTime();
     var usetime2 = time2 - time1;
-    var url = $('#pictureurl').attr('src');
+    //var url = $('#pictureurl').attr('src');
     isTrue(para);
     recodeTime(usetime2);
     clearInterval(timedown);
-    if (urls[flag] != '0') {
+    if (urls[flag] !== '0') {
       $('#pictureurl').attr('src', urls[flag]);
     } else {
       endtest2(usetime2);
@@ -224,14 +235,14 @@ $(document).ready(function ($) {
 
   //第二次测试按钮事件
   $('#yes').click(function () {
-    recheck("yes");
+    recheck('yes');
   });
 
   $('#maybe').click(function () {
-    recheck("maybe");
+    recheck('mabey');
   });
   $('#no').click(function () {
-    recheck("no");
+    recheck('no');
   });
 
 });

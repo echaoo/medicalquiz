@@ -15,8 +15,6 @@ import java.util.Collection;
 @Controller
 public class AdminController {
 
-    @Autowired
-    private ParticipatorDao participatorDao;
 
     @Autowired
     private DatumDao datumDao;
@@ -32,8 +30,8 @@ public class AdminController {
     @RequestMapping(value = "/adminlogin", method = RequestMethod.POST)
     public String login(String username, String password, Model model) {
         if (username.equals("admin") && password.equals("admin")) {
-            Iterable<Participator> participators = participatorDao.findAll();
-            model.addAttribute("adminLists", participators);
+            //Iterable<Participator> participators = participatorDao.findAll();
+            //model.addAttribute("adminLists", participators);
             return "admin";
         } else {
             String result = "出错了！";
@@ -46,8 +44,8 @@ public class AdminController {
 
     @RequestMapping("/detail")
     public String showDetail(int admissionnum, int admnum, int number, Model model) {
-        Collection<Participator> participator = participatorDao.findByAdmissionnum(admissionnum);
-        model.addAttribute("participator", participator);
+        //Collection<Participator> participator = participatorDao.findByAdmissionnum(admissionnum);
+        //model.addAttribute("participator", participator);
         //Collection<Datum> datum = datumDao.findByAdmnum(admnum);
         //model.addAttribute("datum", datum);
         Collection<MMSE> mmses = mmseDao.findByNumber(number);

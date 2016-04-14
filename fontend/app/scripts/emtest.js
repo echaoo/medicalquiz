@@ -13,7 +13,6 @@ function endtest1(correctdata) {
   postresult(correctdata);
   $('#testcontent').hide();
   $('#over').show();
-
 }
 
 function fillForm(val) {
@@ -150,6 +149,11 @@ $(document).ready(function ($) {
     });//打乱顺序
     $('#description1').hide();
     $('#testcontent').show();
+    $('#in').show();
+    $('#out').show();
+    $('#yes').hide();
+    $('#maybe').hide();
+    $('#no').hide();
     urls[40] = '0';
     $('#pictureurl').attr('src', urls[0]);
   });
@@ -164,7 +168,22 @@ $(document).ready(function ($) {
 
   $('#teststart').click(function () {
     $('#over').hide();
-    $('#testcontent').show();
+    $('#description2').show();
   });
+
+  $('#teststart2').click(function(){
+    urls.sort(function () {
+      return 0.5 - Math.random();
+    });//打乱顺序
+    $('#description2').hide();
+    $('#testcontent').show();
+    $('#in').hide();
+    $('#out').hide();
+    $('#yes').show();
+    $('#maybe').show();
+    $('#no').show();
+    urls[40] = '0';
+    $('#pictureurl').attr('src', urls[0]);
+  })
 });
 

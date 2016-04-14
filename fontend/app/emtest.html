@@ -61,7 +61,7 @@
         <p>下面共有40张风景图片,请认真观看每一幅图片,并判断每一幅图片是在室内还是室外,并尽量记住图片内容,每幅图片最多呈现八秒。观看结束后,可休息10分钟,再观看40张图片,判断每张图片是否看过。</p>
         <button class="btn btn-primary" id="teststart1">开始测试</button>
       </div>
-      <div id="testcontent1" style="display: none;">
+      <div id="testcontent" style="display: none;">
         <div class="picture">
           <img id="pictureurl" src="" class="img-responsive" alt="Responsive image">
         </div>
@@ -71,6 +71,10 @@
         <div>
           <button id="in" class="btn btn-success">室内</button>
           <button id="out" class="btn btn-danger">室外</button>
+          <button id="yes" class="btn btn-success">看过</button>
+          <button id="maybe" class="btn btn-danger">好像看过</button>
+          <button id="no" class="btn btn-success">没看过</button>
+
         </div>
         <div>
           <form>

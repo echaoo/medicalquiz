@@ -1,6 +1,7 @@
 package com.lihuanyu.medicalquiz.controller;
 
 import com.lihuanyu.medicalquiz.model.*;
+import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,14 @@ public class IndexController {
     @RequestMapping("/changeinfo")
     public String changeInfo(){ return "regpage"; }
 
+    @RequestMapping(value = "/usercenter",method = RequestMethod.GET)
+    public String showUserCenter(){
+        if (httpSession.getAttribute("phone")!=null) {
+            return "personal";
+        }else{
+            return "index";
+        }
+    }
 
     @RequestMapping(value = "/usercenter",method = RequestMethod.POST)
     public String showUserCenter(String name, String phone){

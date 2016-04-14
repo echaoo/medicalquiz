@@ -40,6 +40,10 @@ public class UserCenterController {
     @RequestMapping(value = "/usercenter", method = RequestMethod.POST)
     public String showUserCenter(String name, String phone, Model model) {
         BasicInfo basicInfo = basicInfoDao.findByPhonenumberAndName(phone, name);
+        if (basicInfo == null){
+            model.addAttribute("hint","电话与姓名不匹配或未注册,请重试");
+            return "index";
+        }
         httpSession.setAttribute("phone", phone);
         httpSession.setAttribute("userid", basicInfo.getId());
         int id = basicInfo.getId();

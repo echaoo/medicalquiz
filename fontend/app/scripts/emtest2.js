@@ -84,8 +84,8 @@ function isTrue(url,choose) {
       //right
       correctrate2 += '1';
     } else{
-      //right
-      correctrate2 += '1';
+      //wrong
+      correctrate2 += '0';
     }
   }
   console.log(correctrate2);
@@ -265,7 +265,7 @@ $(document).ready(function ($){
   });
 
   $('#maybe').click(function () {
-    recheck('mabey');
+    recheck('maybe');
   });
   $('#no').click(function () {
     recheck('no');

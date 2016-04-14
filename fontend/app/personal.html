@@ -58,33 +58,58 @@
     <h2>黄岛科技VCI认知评估及CVD网络评估</h2>
     <div style="padding:3%"></div>
     <div class="row">
-      <div class="col-md-6" style="margin-bottom: 20px">
-        <a href="test" class="btn btn-success">进行测试</a>
+      <div class="col-md-4" style="margin-bottom: 20px">
+        <a href="/test" class="btn btn-success">进行测试</a>
       </div>
-      <div class="col-md-6">
-        <a href="changeinfo" class="btn btn-warning">修改资料</a>
+      <div class="col-md-4" style="margin-bottom: 20px">
+        <a href="/emtest" class="btn btn-info">E M 测试</a>
+      </div>
+      <div class="col-md-4">
+        <a href="/changeinfo" class="btn btn-warning">修改资料</a>
       </div>
     </div>
-    <h3>测试记录</h3>
-    <div style="padding:3%"></div>
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>测试编号</th>
-        <th>Datum测试分数</th>
-        <th>MMSE测试分数</th>
-        <th>详情</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="testInfo:${testInfos}">
-        <td th:text="${testInfo.id}">id</td>
-        <td th:text="${testInfo.createtime}">分数1</td>
-        <td th:text="${testInfo.ispass}">分数2</td>
-        <td><a th:href="@{/detail(testid=${testInfo.id})}">详情</a></td>
-      </tr>
-      </tbody>
-    </table>
+    <div>
+      <h3>普通测试记录</h3>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>测试编号</th>
+          <th>Datum测试分数</th>
+          <th>MMSE测试分数</th>
+          <th>详情</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="testInfo:${testInfos}">
+          <td th:text="${testInfo.id}">id</td>
+          <td th:text="${testInfo.datumscore}">分数1</td>
+          <td th:text="${testInfo.mmsetestscore}">分数2</td>
+          <td><a th:href="@{/detail(testid=${testInfo.id})}">详情</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3>E M 测试记录</h3>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>测试编号</th>
+          <th>Datum测试分数</th>
+          <th>MMSE测试分数</th>
+          <th>详情</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="testInfo:${testInfos}">
+          <td th:text="${testInfo.id}">id</td>
+          <td th:text="${testInfo.datumscore}">分数1</td>
+          <td th:text="${testInfo.mmsetestscore}">分数2</td>
+          <td><a th:href="@{/detail(testid=${testInfo.id})}">详情</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 

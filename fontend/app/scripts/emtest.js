@@ -71,7 +71,6 @@ function countDownTime(currentTime, picUrl) {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
         clearInterval(timedown);
-
         endtest1();
       }
       $('#timedown').text(currentTime);
@@ -80,6 +79,7 @@ function countDownTime(currentTime, picUrl) {
   } else {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
+        recodeTime('8000');
         clearInterval(timedown);
         $('#pictureurl').attr('src', picUrl);
       }
@@ -146,6 +146,7 @@ $(document).ready(function ($) {
     flag++;
     countDownTime(8, urls[flag]);
     console.log(flag);
+    console.log(usetime);
   });
 
   function clickChangePic(para) {

@@ -159,7 +159,7 @@ $(document).ready(function ($) {
     if (urls[flag] != '0') {
       $('#pictureurl').attr('src', urls[flag]);
     } else {
-      endtest1();
+      endtest1(usetime1);
     }
   }
 
@@ -203,7 +203,7 @@ $(document).ready(function ($) {
     if (urls[flag] != '0') {
       $('#pictureurl').attr('src', urls[flag]);
     } else {
-      endtest2();
+      endtest2(usetime2);
     }
   }
 

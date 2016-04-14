@@ -22,6 +22,9 @@ public class RegController {
     @Autowired
     private HttpSession httpSession;
 
+    @RequestMapping("/changeinfo")
+    public String changeInfo(){ return "regpage"; }
+
     @RequestMapping(value = "/savenew",method = RequestMethod.POST)
     public String dealReg(String phone, String name, String sex, String age, String number, String birth, String education, String occupation, String marital, String wherelive, String live, String hypertension, String hypertensiontime, String hypertionsion, String diabetes, String diabetestime, String hyperlipemia, String hyperlipemiatime, String LDLC, String HDLC, String TC, String TG, String angiocardiopathy, String heartpaintime, String myocardial, String AF, String ACVD, String headblood, String chocke, String headchocke, String TIA, String headhurt, String illposition, String illlevel, String drinkstate, String smoke, String isdrinktea, String sleepstate, String PEstate, String socialstate, String hobby, String eathabits){
 

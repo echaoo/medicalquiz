@@ -16,9 +16,6 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class IndexController {
 
-    @RequestMapping("/changeinfo")
-    public String changeInfo(){ return "regpage"; }
-
     @RequestMapping("/")
     public String showIndex() { return "index"; }
 }

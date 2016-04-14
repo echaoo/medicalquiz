@@ -1,8 +1,6 @@
 package com.lihuanyu.medicalquiz.controller;
 
 import com.lihuanyu.medicalquiz.model.*;
-import com.lihuanyu.medicalquiz.services.CreateMessage;
-import com.lihuanyu.medicalquiz.services.CreateTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,34 +14,24 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class IndexController {
 
-    @RequestMapping(value = "/savemmse", method = RequestMethod.POST)
-    public String saveMmseTest() {
-        return "finishtest";
-    }
+    @Autowired
+    private BasicInfoDao basicInfoDao;
 
-    @RequestMapping(value = "/savedatum", method = RequestMethod.POST)
-    public String saveDatum() {
-        return "mmsetest";
-    }
+    @Autowired
+    private HttpSession httpSession;
 
     @RequestMapping("/changeinfo")
     public String changeInfo(){ return "regpage"; }
 
-    @RequestMapping("/test")
-    public String showTest(){ return "datumtest"; }
-
-    @RequestMapping(value = "/savenew", method = RequestMethod.POST)
-    public String saveNew() {
-        return "datumtest";
-    }
-
-    @RequestMapping("/regnew")
-    public String showReg() {
-        return "regpage";
-    }
 
     @RequestMapping(value = "/usercenter",method = RequestMethod.POST)
-    public String showUserCenter(){ return "personal"; }
+    public String showUserCenter(String name, String phone){
+        BasicInfo basicInfo = basicInfoDao.findByPhonenumber(phone);
+        httpSession.setAttribute("phone",phone);
+        int id = basicInfo.getId();
+
+        return "personal";
+    }
 
     @RequestMapping("/")
     public String showIndex() { return "index"; }

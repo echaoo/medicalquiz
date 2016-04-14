@@ -3,18 +3,23 @@
  */
 
 var timedown;
-var correctrate = "";
-
+var correctrate1 = "";
+var correctrate2 = "";
 function postresult(){
-  $.post( "test.php", { correct:correctrate , time: "2pm" } );
+  $.post( "test.php", { correct:correctrate1 , time: "2pm" } );
 }
 
-function endtest1(correctdata) {
-  postresult(correctdata);
+function endtest1(correctdata1) {
+  postresult(correctdata1);
   $('#testcontent').hide();
-  $('#over').show();
+  $('#over1').show();
 }
 
+function endtest2(correctrate2){
+  postresult(correctrate2);
+  $('#testcontent').hide();
+  $('#over2').show();
+}
 function fillForm(val) {
   var now = $('#emtestresult1').val();
   now = now + val;
@@ -26,26 +31,32 @@ function isChooseTrue(url, choose) {
   if (parseInt(arr[2]) <= 20) {
     if (choose == 'in') {
       //right
-      correctrate+="1";
+      correctrate1+="1";
       fillForm("1");
     } else {
       //wrong
-      correctrate+="2";
+      correctrate1+="2";
       fillForm("2");
     }
   } else {
     if (choose == "in") {
       //wrong
-      correctrate+="2";
+      correctrate1+="2";
       fillForm("2");
     } else {
       //right
-      correctrate+="1";
+      correctrate1+="1";
       fillForm("1");
     }
   }
 }
-
+function isTrue(choose){
+  if (choose=="yes"){
+    correctrate2+=1;
+  }else if(choose =="maybe"){
+    correctrate2+=2;
+  }else correctrate2+=0;
+}
 function countDownTime(currentTime, picUrl) {
   'use strict';
   if (picUrl == '0') {
@@ -166,15 +177,32 @@ $(document).ready(function ($) {
     clickChangePic("out")
   });
 
-  $('#teststart').click(function () {
-    $('#over').hide();
+//显示第二次测试
+  $('#teststart3').click(function () {
+    $('#over1').hide();
     $('#description2').show();
   });
 
+  function recheck(para){
+    var d2 = new Date();
+    time2 = d2.getTime();
+    var time = time2 - time1;
+    var url = $('#pictureurl').attr('src');
+    //isTrue(para);
+    clearInterval(timedown);
+    if (urls[flag] != '0') {
+      $('#pictureurl').attr('src', urls[flag]);
+    }else{
+      endtest2();
+    }
+  }
+
+//第二次开始测试
   $('#teststart2').click(function(){
-    urls.sort(function () {
-      return 0.5 - Math.random();
-    });//打乱顺序
+    flag = 0;
+    //urls.sort(function () {
+    //  return 0.5 - Math.random();
+    //});//打乱顺序
     $('#description2').hide();
     $('#testcontent').show();
     $('#in').hide();
@@ -184,6 +212,19 @@ $(document).ready(function ($) {
     $('#no').show();
     urls[40] = '0';
     $('#pictureurl').attr('src', urls[0]);
-  })
+  });
+
+  //第二次测试按钮事件
+  $('#yes').click(function () {
+    recheck("yes");
+  });
+
+  $('#maybe').click(function () {
+    recheck("maybe");
+  });
+  $('#no').click(function () {
+    recheck("no");
+  });
+
 });
 

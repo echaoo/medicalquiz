@@ -5,26 +5,39 @@
 var timedown;
 var correctrate1 = "";
 var correctrate2 = "";
-function postresult(url,correctrate) {
-  $.post(url, {correct: correctrate, time: '2px'});
+var usetime = "";
+
+function postresult(url,correctrate,time) {
+  $.post(url, {correct: correctrate, time: time});
 }
 
-function endtest1() {
+function endtest1(paratime) {
   var url1 = '/saveemtest1';
   var correctrate = correctrate1;
-  postresult(url1, correctrate);
+  var time = recodeTime(paratime);
+  postresult(url1, correctrate,time);
+  clearTime();
   $('#testcontent').hide();
   $('#over1').show();
 }
 
-function endtest2() {
+function endtest2(paratime) {
   var correctrate = correctrate2;
   var url2 = '/saveemtest2';
-  postresult(url2, correctrate);
+  var time = recodeTime(paratime);
+  postresult(url2, correctrate,time);
+  clearTime();
   $('#testcontent').hide();
   $('#over2').show();
 }
 
+function clearTime(){
+  usetime = '';
+}
+function recodeTime(usertime){
+  usetime += (usertime+';');
+  return usetime;
+}
 function isChooseTrue(url, choose) {
   var arr = url.split(/[//.]/);
   if (parseInt(arr[2]) <= 20) {
@@ -57,8 +70,8 @@ function countDownTime(currentTime, picUrl) {
   if (picUrl == '0') {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
-        fillForm("0");
         clearInterval(timedown);
+
         endtest1();
       }
       $('#timedown').text(currentTime);
@@ -67,7 +80,6 @@ function countDownTime(currentTime, picUrl) {
   } else {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
-        fillForm("0");
         clearInterval(timedown);
         $('#pictureurl').attr('src', picUrl);
       }
@@ -127,19 +139,6 @@ $(document).ready(function ($) {
   var time1;
   var time2;
 
-  function clickChangePic(para) {
-    var d2 = new Date();
-    time2 = d2.getTime();
-    var time = time2 - time1;
-    var url = $('#pictureurl').attr('src');
-    isChooseTrue(url, para);
-    clearInterval(timedown);
-    if (urls[flag] != '0') {
-      $('#pictureurl').attr('src', urls[flag]);
-    } else {
-      endtest1();
-    }
-  }
 
   $('#pictureurl').load(function () {
     var d1 = new Date();
@@ -148,6 +147,21 @@ $(document).ready(function ($) {
     countDownTime(8, urls[flag]);
     console.log(flag);
   });
+
+  function clickChangePic(para) {
+    var d2 = new Date();
+    time2 = d2.getTime();
+    var usetime1 = time2 - time1;
+    var url = $('#pictureurl').attr('src');
+    isChooseTrue(url, para);
+    recodeTime(usetime1);
+    clearInterval(timedown);
+    if (urls[flag] != '0') {
+      $('#pictureurl').attr('src', urls[flag]);
+    } else {
+      endtest1();
+    }
+  }
 
   $('#teststart1').click(function () {
     urls.sort(function () {
@@ -181,9 +195,10 @@ $(document).ready(function ($) {
   function recheck(para) {
     var d2 = new Date();
     time2 = d2.getTime();
-    var time = time2 - time1;
+    var usetime2 = time2 - time1;
     var url = $('#pictureurl').attr('src');
     isTrue(para);
+    recodeTime(usetime2);
     clearInterval(timedown);
     if (urls[flag] != '0') {
       $('#pictureurl').attr('src', urls[flag]);

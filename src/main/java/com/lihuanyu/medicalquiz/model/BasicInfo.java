@@ -19,7 +19,7 @@ public class BasicInfo {
     //人口学资料
     private char sex;
     private int year;
-    private int number;
+    private String number;
     private String birthtime;
     private String education;
     private String occupation;
@@ -104,11 +104,11 @@ public class BasicInfo {
         this.year = year;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 

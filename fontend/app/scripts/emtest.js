@@ -82,6 +82,8 @@ function countDownTime(currentTime, picUrl) {
   if (picUrl === '0') {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
+        correctrate1 += '2';
+        recodeTime('8000');
         clearInterval(timedown);
         endtest1();
       }
@@ -91,6 +93,7 @@ function countDownTime(currentTime, picUrl) {
   } else {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
+        correctrate1 += '2';
         recodeTime('8000');
         clearInterval(timedown);
         $('#pictureurl').attr('src', picUrl);
@@ -159,6 +162,7 @@ $(document).ready(function ($) {
     countDownTime(8, urls[flag]);
     console.log(flag);
     console.log(usetime);
+    console.log(correctrate1);
   });
 
   function clickChangePic(para) {

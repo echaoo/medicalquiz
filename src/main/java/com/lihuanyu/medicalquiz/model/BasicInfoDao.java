@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface BasicInfoDao extends CrudRepository<BasicInfo,Integer> {
     public BasicInfo findByPhonenumber(String phonenumber);
+    public BasicInfo findByPhonenumberAndName(String phonenumber, String Name);
 }

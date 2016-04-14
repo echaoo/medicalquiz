@@ -26,22 +26,22 @@ public class UserCenterController {
     @Autowired
     private BasicInfoDao basicInfoDao;
 
-    @RequestMapping(value = "/usercenter",method = RequestMethod.GET)
-    public String showUserCenter(Model model){
-        if (httpSession.getAttribute("phone")!=null) {
+    @RequestMapping(value = "/usercenter", method = RequestMethod.GET)
+    public String showUserCenter(Model model) {
+        if (httpSession.getAttribute("phone") != null) {
             int id = (int) httpSession.getAttribute("userid");
             userCenterService.showMessage(id, model);
             return "personal";
-        }else{
+        } else {
             return "index";
         }
     }
 
-    @RequestMapping(value = "/usercenter",method = RequestMethod.POST)
-    public String showUserCenter(String name, String phone, Model model){
-        BasicInfo basicInfo = basicInfoDao.findByPhonenumber(phone);
-        httpSession.setAttribute("phone",phone);
-        httpSession.setAttribute("userid",basicInfo.getId());
+    @RequestMapping(value = "/usercenter", method = RequestMethod.POST)
+    public String showUserCenter(String name, String phone, Model model) {
+        BasicInfo basicInfo = basicInfoDao.findByPhonenumberAndName(phone, name);
+        httpSession.setAttribute("phone", phone);
+        httpSession.setAttribute("userid", basicInfo.getId());
         int id = basicInfo.getId();
         userCenterService.showMessage(id, model);
         return "personal";

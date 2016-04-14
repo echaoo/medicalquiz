@@ -87,13 +87,13 @@
               <div class="form-group">
                 <label for="phone" class="col-md-3 control-label">手机号</label>
                 <div class="col-md-6">
-                  <input id="phone" class="form-control">
+                  <input id="phone" name="phone" class="form-control">
                 </div>
               </div>
               <div class="form-group">
                 <label for="realname" class="col-md-3 control-label">姓名</label>
                 <div class="col-md-6">
-                  <input id="realname" class="form-control">
+                  <input id="realname" name="name" class="form-control">
                 </div>
               </div>
             </div>
@@ -201,7 +201,7 @@
             <div class="form-group col-md-12">
               <label class="control-label col-md-2">居住情况</label>
               <div class="col-md-9">
-                <input type="text" class="form-control" placeholder="独居或与家人居住,时长几年?">
+                <input name="live" type="text" class="form-control" placeholder="独居或与家人居住,时长几年?">
               </div>
             </div>
           </div>
@@ -230,15 +230,15 @@
               <div class="col-md-2">
                 <select id="hyperselect" class="form-control" name="hypertension">
                   <option>请选择</option>
-                  <option value="yes">有</option>
-                  <option value="no">无</option>
-                  <option value="unknow">不详</option>
+                  <option value="y">有</option>
+                  <option value="n">无</option>
+                  <option value="u">不详</option>
                 </select>
               </div>
               <div id="hyper" class="col-md-8" style="display: none">
                 <label class="col-md-3 control-label" for="hypertensiontime">患病时长</label>
                 <div class="col-md-3">
-                  <input id="hypertensiontime" type="number" class="form-control" placeholder="年">
+                  <input name="hypertensiontime" id="hypertensiontime" type="number" class="form-control" placeholder="年">
                 </div>
                 <label class="col-md-2 control-label" for="hypertensiontime">最高</label>
                 <div class="col-md-4">
@@ -254,9 +254,9 @@
               <div class="col-md-8">
                 <select id="diabetes" class="form-control" name="diabetes">
                   <option>请选择</option>
-                  <option value="yes">有</option>
-                  <option value="no">无</option>
-                  <option value="unknow">不详</option>
+                  <option value="y">有</option>
+                  <option value="n">无</option>
+                  <option value="u">不详</option>
                 </select>
               </div>
             </div>
@@ -274,9 +274,9 @@
               <div class="col-md-8">
                 <select id="hyperlipemia" class="form-control" name="hyperlipemia">
                   <option>请选择</option>
-                  <option value="yes">有</option>
-                  <option value="no">无</option>
-                  <option value="unknow">不详</option>
+                  <option value="y">有</option>
+                  <option value="n">无</option>
+                  <option value="u">不详</option>
                 </select>
               </div>
             </div>
@@ -323,8 +323,8 @@
               <div class="col-md-8">
                 <select id="angiocardiopathy" class="form-control" name="angiocardiopathy">
                   <option>请选择</option>
-                  <option value="yes">有</option>
-                  <option value="no">无</option>
+                  <option value="y">有</option>
+                  <option value="n">无</option>
                 </select>
               </div>
             </div>
@@ -337,19 +337,19 @@
             <div class="form-group col-md-12">
               <label class="control-label col-md-2">心绞痛</label>
               <div class="col-md-4">
-                <input class="form-control" type="number">
+                <input class="form-control" type="number" name="heartpaintime">
               </div>
             </div>
             <div class="form-group col-md-12">
               <label class="control-label col-md-2">心肌梗死</label>
               <div class="col-md-4">
-                <input class="form-control" type="number">
+                <input class="form-control" type="number" name="myocardial">
               </div>
             </div>
             <div class="form-group col-md-12">
               <label class="control-label col-md-2">心房纤颤</label>
               <div class="col-md-4">
-                <input class="form-control" type="number">
+                <input class="form-control" type="number" name="AF">
               </div>
             </div>
           </div><!--心血管病类型及时间-->
@@ -360,8 +360,8 @@
               <div class="col-md-8">
                 <select id="ACVD" class="form-control" name="ACVD">
                   <option>请选择</option>
-                  <option value="yes">有</option>
-                  <option value="no">无</option>
+                  <option value="y">有</option>
+                  <option value="n">无</option>
                 </select>
               </div>
             </div>
@@ -374,43 +374,43 @@
             <div class="form-group col-md-12">
               <label class="control-label col-md-2">脑出血</label>
               <div class="col-md-4">
-                <input class="form-control" type="number">
+                <input class="form-control" type="number" name="headblood">
               </div>
             </div>
             <div class="form-group col-md-12">
               <label class="control-label col-md-2">腔梗</label>
               <div class="col-md-4">
-                <input class="form-control" type="number">
+                <input class="form-control" type="number" name="chocke">
               </div>
             </div>
             <div class="form-group col-md-12">
               <label class="control-label col-md-2">脑梗死</label>
               <div class="col-md-4">
-                <input class="form-control" type="number">
+                <input class="form-control" type="number" name="headchocke">
               </div>
             </div>
             <div class="form-group col-md-12">
               <label class="control-label col-md-2">TIA</label>
               <div class="col-md-4">
-                <input class="form-control" type="number">
+                <input class="form-control" type="number" name="TIA">
               </div>
             </div>
             <div class="form-group col-md-12">
               <label class="control-label col-md-2">脑外伤</label>
               <div class="col-md-4">
-                <input class="form-control" type="number">
+                <input class="form-control" type="number" name="headhurt">
               </div>
             </div>
             <div class="form-group col-md-12">
               <label class="control-label col-md-2">病变部位</label>
               <div class="col-md-4">
-                <input class="form-control" type="text" placeholder="描述">
+                <input class="form-control" type="text" placeholder="描述" name="illposition">
               </div>
             </div>
             <div class="form-group col-md-12">
               <label class="control-label col-md-2">病变大小</label>
               <div class="col-md-4">
-                <input class="form-control" type="text" placeholder="描述">
+                <input class="form-control" type="text" placeholder="描述" name="illlevel">
               </div>
             </div>
           </div><!--脑血管病类型及时间-->
@@ -465,7 +465,7 @@
             <div class="form-group col-md-6">
               <label class="control-label col-md-4">喝茶状况</label>
               <div class="col-md-8">
-                <select class="form-control" name="drinkstate">
+                <select class="form-control" name="isdrinktea">
                   <option>请选择</option>
                   <option>喝茶</option>
                   <option>不喝茶</option>
@@ -475,7 +475,7 @@
             <div class="form-group col-md-6">
               <label class="control-label col-md-4">睡眠状况</label>
               <div class="col-md-8">
-                <select class="form-control" name="smoke">
+                <select class="form-control" name="sleepstate">
                   <option>请选择</option>
                   <option>睡眠不足</option>
                   <option>每天7-9小时</option>
@@ -489,7 +489,7 @@
             <div class="form-group col-md-6">
               <label class="control-label col-md-5">体育锻炼状况</label>
               <div class="col-md-7">
-                <select class="form-control" name="drinkstate">
+                <select class="form-control" name="PEstate">
                   <option>请选择</option>
                   <option>经常参加</option>
                   <option>偶尔参加</option>
@@ -500,7 +500,7 @@
             <div class="form-group col-md-6">
               <label class="control-label col-md-5">社会交往情况</label>
               <div class="col-md-7">
-                <select class="form-control" name="smoke">
+                <select class="form-control" name="socialstate">
                   <option>请选择</option>
                   <option>经常参加</option>
                   <option>偶尔参加</option>
@@ -514,7 +514,7 @@
             <div class="form-group col-md-6">
               <label class="control-label col-md-4">业余爱好</label>
               <div class="col-md-8">
-                <select class="form-control" name="drinkstate">
+                <select class="form-control" name="hobby">
                   <option>请选择</option>
                   <option>有</option>
                   <option>无</option>
@@ -524,7 +524,7 @@
             <div class="form-group col-md-6">
               <label class="control-label col-md-4">饮食</label>
               <div class="col-md-8">
-                <select class="form-control" name="smoke">
+                <select class="form-control" name="eathabits">
                   <option>请选择</option>
                   <option>偏向荤食</option>
                   <option>偏向素食</option>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html class="no-js" lang="" xmlns="http://www.w3.org/1/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EM测试</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="container">
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">VCI/CVD评估</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">首页</a></li>
+          <li><a href="about">关于</a></li>
+          <li><a href="help">帮助</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>
+
+  <div class="jumbotron">
+    <h1>情景记忆编码测试</h1>
+    <div>
+      <div id="description1">
+        <h3>欢迎参加我们的实验</h3>
+        <p>下面共有16张风景图片,请认真观看每一幅图片,并判断每一幅图片是在室内还是室外,并尽量记住图片内容,每幅图片最多呈现八秒。观看结束后,可休息10分钟,再观看32张图片,判断这些图片是否看过。</p>
+        <button class="btn btn-primary" id="teststart1">开始测试</button>
+      </div>
+      <div id="testcontent" style="display: none;">
+        <div class="picture">
+          <img id="pictureurl" src="" class="img-responsive" alt="Responsive image">
+        </div>
+        <div class="count-down">
+          倒计时:<span id="timedown">8</span>秒
+        </div>
+        <div>
+          <button id="in" class="btn btn-success">室内</button>
+          <button id="out" class="btn btn-danger">室外</button>
+          <button id="yes" class="btn btn-success">看过</button>
+          <button id="maybe" class="btn btn-danger">好像看过</button>
+          <button id="no" class="btn btn-success">没看过</button>
+
+        </div>
+      </div>
+      <div id="over1" style="display: none;">
+        <h4 style="margin-top: 40px;margin-bottom: 40px">第一阶段判断测试部分结束，可休息片刻，点击下面的按钮开始记忆测试部分</h4>
+        <button class="btn btn-primary" id="teststart3">开始测试</button>
+      </div>
+      <div id="over2" style="display: none;">
+        <h4 style="margin-top: 40px;margin-bottom: 40px">测试第一阶段完毕,可休息一下,点击下面的按钮开始第二阶段</h4>
+        <button class="btn btn-primary" id="teststart4">第二阶段</button>
+      </div>
+    </div>
+    <div>
+      <div id="description2" style="display: none">
+        <h3>欢迎参加我们的实验</h3>
+        <p>欢迎回来！下面共有40张风景图片,请认真观看每一幅图片,仔细回想是否观看过,根据测试情况点击相应的的按钮。每幅图片最多呈现八秒。</p>
+        <button class="btn btn-primary" id="teststart2">开始测试</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>♥ from the UPC - skyADMIN & Echaoo</p>
+  </footer>
+</div>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js scripts/plugins.js -->
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/emtest2.js -->
+<script src="scripts/emtest2.js"></script>
+<!-- endbuild -->
+</body>
+</html>

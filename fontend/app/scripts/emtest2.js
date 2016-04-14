@@ -1,7 +1,6 @@
 /**
- * Created by skyADMIN on 16/3/23.
+ * Created by echao on 2016/4/14.
  */
-
 var timedown;
 var correctrate1 = '';
 var correctrate2 = '';
@@ -48,7 +47,7 @@ function endtest2(paratime) {
 function isChooseTrue(url, choose) {
   'use strict';
   var arr = url.split(/[//.]/);
-  if (parseInt(arr[2]) <= 20) {
+  if (parseInt(arr[2]) <= 8) {
     if (choose === 'in') {
       //right
       correctrate1 += '1';
@@ -65,18 +64,34 @@ function isChooseTrue(url, choose) {
       correctrate1 += '1';
     }
   }
+  console.log(correctrate1);
 }
-function isTrue(choose) {
+//对了加1，错了加0，可能加2
+function isTrue(url,choose) {
   'use strict';
-  //对了加1，错了加0，可能加2
-  if (choose === 'yes') {
-    correctrate2 += '1';
-  } else if (choose === 'maybe') {
-    correctrate2 += '2';
-  } else{
-    correctrate2 += '0';
+  var arr = url.split(/[//.]/);
+  if (parseInt(arr[2]) <= 16){
+    if (choose === 'yes') {
+      //right
+      correctrate2 += '1';
+    } else if (choose === 'maybe') {
+      correctrate2 += '2';
+    } else{
+      correctrate2 += '0';
+    }
+  }else {
+    if (choose === 'no') {
+      //right
+      correctrate2 += '1';
+    } else{
+      //right
+      correctrate2 += '1';
+    }
   }
-}
+  console.log(correctrate2);
+  }
+
+
 function countDownTime(currentTime, picUrl) {
   'use strict';
   if (picUrl === '0') {
@@ -91,61 +106,68 @@ function countDownTime(currentTime, picUrl) {
   } else {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
-        recodeTime('8000');
         clearInterval(timedown);
+        recodeTime('8000');
         $('#pictureurl').attr('src', picUrl);
       }
       $('#timedown').text(currentTime);
       currentTime--;
     }, 1000);
-  }
-}
+  };
+};
 
-$(document).ready(function ($) {
-
-  'use strict';
-
-  var urls = [
-    'images/emtest1/1.jpeg',
-    'images/emtest1/2.jpeg',
-    'images/emtest1/3.jpeg',
-    'images/emtest1/4.jpeg',
-    'images/emtest1/5.jpeg',
-    'images/emtest1/6.jpeg',
-    'images/emtest1/7.jpeg',
-    'images/emtest1/8.jpeg',
-    'images/emtest1/9.jpeg',
-    'images/emtest1/10.jpeg',
-    'images/emtest1/11.jpeg',
-    'images/emtest1/12.jpeg',
-    'images/emtest1/13.jpeg',
-    'images/emtest1/14.jpeg',
-    'images/emtest1/15.jpeg',
-    'images/emtest1/16.jpeg',
-    'images/emtest1/17.jpeg',
-    'images/emtest1/18.jpeg',
-    'images/emtest1/19.jpeg',
-    'images/emtest1/20.jpeg',
-    'images/emtest1/21.jpeg',
-    'images/emtest1/22.jpeg',
-    'images/emtest1/23.jpeg',
-    'images/emtest1/24.jpeg',
-    'images/emtest1/25.jpeg',
-    'images/emtest1/26.jpeg',
-    'images/emtest1/27.jpeg',
-    'images/emtest1/28.jpeg',
-    'images/emtest1/29.jpeg',
-    'images/emtest1/30.jpeg',
-    'images/emtest1/31.jpeg',
-    'images/emtest1/32.jpeg',
-    'images/emtest1/33.jpeg',
-    'images/emtest1/34.jpeg',
-    'images/emtest1/35.jpeg',
-    'images/emtest1/36.jpeg',
-    'images/emtest1/37.jpeg',
-    'images/emtest1/38.jpeg',
-    'images/emtest1/39.jpeg',
-    'images/emtest1/40.jpeg'
+$(document).ready(function ($){
+  var urls1 = [
+    'images/emtest2/1.bmp',
+    'images/emtest2/2.bmp',
+    'images/emtest2/3.bmp',
+    'images/emtest2/4.bmp',
+    'images/emtest2/5.bmp',
+    'images/emtest2/6.bmp',
+    'images/emtest2/7.bmp',
+    'images/emtest2/8.bmp',
+    'images/emtest2/9.bmp',
+    'images/emtest2/10.bmp',
+    'images/emtest2/11.bmp',
+    'images/emtest2/12.bmp',
+    'images/emtest2/13.bmp',
+    'images/emtest2/14.bmp',
+    'images/emtest2/15.bmp',
+    'images/emtest2/16.bmp'
+    ];
+  var urls2 = [
+    'images/emtest2/1.bmp',
+    'images/emtest2/2.bmp',
+    'images/emtest2/3.bmp',
+    'images/emtest2/4.bmp',
+    'images/emtest2/5.bmp',
+    'images/emtest2/6.bmp',
+    'images/emtest2/7.bmp',
+    'images/emtest2/8.bmp',
+    'images/emtest2/9.bmp',
+    'images/emtest2/10.bmp',
+    'images/emtest2/11.bmp',
+    'images/emtest2/12.bmp',
+    'images/emtest2/13.bmp',
+    'images/emtest2/14.bmp',
+    'images/emtest2/15.bmp',
+    'images/emtest2/16.bmp',
+    'images/emtest2/17.bmp',
+    'images/emtest2/18.bmp',
+    'images/emtest2/19.bmp',
+    'images/emtest2/20.bmp',
+    'images/emtest2/21.bmp',
+    'images/emtest2/22.bmp',
+    'images/emtest2/23.bmp',
+    'images/emtest2/24.bmp',
+    'images/emtest2/25.bmp',
+    'images/emtest2/26.bmp',
+    'images/emtest2/27.bmp',
+    'images/emtest2/28.bmp',
+    'images/emtest2/29.bmp',
+    'images/emtest2/30.bmp',
+    'images/emtest2/31.bmp',
+    'images/emtest2/32.bmp'
   ];
   var flag = 0;
   var time1;
@@ -156,7 +178,7 @@ $(document).ready(function ($) {
     var d1 = new Date();
     time1 = d1.getTime();
     flag++;
-    countDownTime(8, urls[flag]);
+    countDownTime(8, urls1[flag]);
     console.log(flag);
     console.log(usetime);
   });
@@ -169,15 +191,15 @@ $(document).ready(function ($) {
     isChooseTrue(url, para);
     recodeTime(usetime1);
     clearInterval(timedown);
-    if (urls[flag] !== '0') {
-      $('#pictureurl').attr('src', urls[flag]);
+    if (urls1[flag] !== '0') {
+      $('#pictureurl').attr('src', urls1[flag]);
     } else {
       endtest1(usetime1);
     }
   }
 
   $('#teststart1').click(function () {
-    urls.sort(function () {
+    urls1.sort(function () {
       return 0.5 - Math.random();
     });//打乱顺序
     $('#description1').hide();
@@ -187,8 +209,8 @@ $(document).ready(function ($) {
     $('#yes').hide();
     $('#maybe').hide();
     $('#no').hide();
-    urls[40] = '0';
-    $('#pictureurl').attr('src', urls[0]);
+    urls1[16] = '0';
+    $('#pictureurl').attr('src', urls1[0]);
   });
 
   $('#in').click(function () {
@@ -199,7 +221,7 @@ $(document).ready(function ($) {
     clickChangePic('out');
   });
 
-//显示第二次测试
+  //显示第二次测试
   $('#teststart3').click(function () {
     $('#over1').hide();
     $('#description2').show();
@@ -209,12 +231,12 @@ $(document).ready(function ($) {
     var d2 = new Date();
     time2 = d2.getTime();
     var usetime2 = time2 - time1;
-    //var url = $('#pictureurl').attr('src');
-    isTrue(para);
+    var url = $('#pictureurl').attr('src');
+    isTrue(url,para);
     recodeTime(usetime2);
     clearInterval(timedown);
-    if (urls[flag] !== '0') {
-      $('#pictureurl').attr('src', urls[flag]);
+    if (urls2[flag] !== '0') {
+      $('#pictureurl').attr('src', urls2[flag]);
     } else {
       endtest2(usetime2);
     }
@@ -222,6 +244,9 @@ $(document).ready(function ($) {
 
 //第二次开始测试
   $('#teststart2').click(function () {
+    urls2.sort(function () {
+      return 0.5 - Math.random();
+    });//打乱顺序
     flag = 0;
     $('#description2').hide();
     $('#testcontent').show();
@@ -230,8 +255,8 @@ $(document).ready(function ($) {
     $('#yes').show();
     $('#maybe').show();
     $('#no').show();
-    urls[40] = '0';
-    $('#pictureurl').attr('src', urls[0]);
+    urls2[32] = '0';
+    $('#pictureurl').attr('src', urls2[0]);
   });
 
   //第二次测试按钮事件
@@ -245,6 +270,4 @@ $(document).ready(function ($) {
   $('#no').click(function () {
     recheck('no');
   });
-
 });
-

@@ -67,7 +67,7 @@ function isChooseTrue(url, choose) {
   console.log(correctrate1);
 }
 //对了加1，错了加0，可能加2
-function isTrue(url,choose) {
+function isTrue(url, choose) {
   'use strict';
   var arr = url.split(/[//.]/);
   if (parseInt(arr[2]) <= 16){
@@ -113,10 +113,11 @@ function countDownTime(currentTime, picUrl) {
       $('#timedown').text(currentTime);
       currentTime--;
     }, 1000);
-  };
-};
+  }
+}
 
 $(document).ready(function ($){
+  'use strict';
   var urls1 = [
     'images/emtest2/1.bmp',
     'images/emtest2/2.bmp',
@@ -232,7 +233,7 @@ $(document).ready(function ($){
     time2 = d2.getTime();
     var usetime2 = time2 - time1;
     var url = $('#pictureurl').attr('src');
-    isTrue(url,para);
+    isTrue(url, para);
     recodeTime(usetime2);
     clearInterval(timedown);
     if (urls2[flag] !== '0') {

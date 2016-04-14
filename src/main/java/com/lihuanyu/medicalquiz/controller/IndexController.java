@@ -4,6 +4,7 @@ import com.lihuanyu.medicalquiz.model.*;
 import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -15,32 +16,8 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class IndexController {
 
-    @Autowired
-    private BasicInfoDao basicInfoDao;
-
-    @Autowired
-    private HttpSession httpSession;
-
     @RequestMapping("/changeinfo")
     public String changeInfo(){ return "regpage"; }
-
-    @RequestMapping(value = "/usercenter",method = RequestMethod.GET)
-    public String showUserCenter(){
-        if (httpSession.getAttribute("phone")!=null) {
-            return "personal";
-        }else{
-            return "index";
-        }
-    }
-
-    @RequestMapping(value = "/usercenter",method = RequestMethod.POST)
-    public String showUserCenter(String name, String phone){
-        BasicInfo basicInfo = basicInfoDao.findByPhonenumber(phone);
-        httpSession.setAttribute("phone",phone);
-        int id = basicInfo.getId();
-
-        return "personal";
-    }
 
     @RequestMapping("/")
     public String showIndex() { return "index"; }

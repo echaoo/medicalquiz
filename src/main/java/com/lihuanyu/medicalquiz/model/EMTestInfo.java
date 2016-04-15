@@ -62,12 +62,12 @@ public class EMTestInfo {
         this.correctrate1 = correctrate1;
     }
 
-    public int getAvecorrecttime() {
-        return avecorrecttime;
+    public int getAvecorrecttime1() {
+        return avecorrecttime1;
     }
 
-    public void setAvecorrecttime(int avecorrecttime) {
-        this.avecorrecttime = avecorrecttime;
+    public void setAvecorrecttime1(int avecorrecttime) {
+        this.avecorrecttime1 = avecorrecttime;
     }
 
     public String getUsetime1() {

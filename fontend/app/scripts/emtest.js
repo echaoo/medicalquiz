@@ -90,11 +90,11 @@ function countDownTime(currentTime, picUrl) {
       $('#timedown').text(currentTime);
       currentTime--;
     }, 1000);
-  } else {
+  }  else {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
-        correctrate1 += '2';
         recodeTime('8000');
+        correctrate1 += '2';
         clearInterval(timedown);
         $('#pictureurl').attr('src', picUrl);
       }
@@ -244,7 +244,7 @@ $(document).ready(function ($) {
   });
 
   $('#maybe').click(function () {
-    recheck('mabey');
+    recheck('maybe');
   });
   $('#no').click(function () {
     recheck('no');

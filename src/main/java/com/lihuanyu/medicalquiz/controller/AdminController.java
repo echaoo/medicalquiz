@@ -33,8 +33,6 @@ public class AdminController {
     @RequestMapping(value = "/adminlogin", method = RequestMethod.POST)
     public String login(String username, String password, Model model) {
         if (username.equals("admin") && password.equals("admin")) {
-            //Iterable<Participator> participators = participatorDao.findAll();
-            //model.addAttribute("adminLists", participators);
             httpSession.setAttribute("adminlogin","true");
             return "redirect:/adminpanel";
         } else {

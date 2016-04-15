@@ -26,6 +26,14 @@ public class UserCenterController {
     @Autowired
     private BasicInfoDao basicInfoDao;
 
+    @RequestMapping("/changeinfo")
+    public String changeUserInfo(){
+        if (httpSession.getAttribute("userid") == null) {
+            return "index";
+        }
+        return "changeinfo";
+    }
+
     @RequestMapping(value = "/usercenter", method = RequestMethod.GET)
     public String showUserCenter(Model model) {
         if (httpSession.getAttribute("phone") != null) {

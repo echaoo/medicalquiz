@@ -24,7 +24,7 @@ function recodeTime(usertime) {
 
 function endtest1(paratime) {
   'use strict';
-  var url1 = '/saveemtest1';
+  var url1 = '/saveemtest3';
   var correctrate = correctrate1;
   var time = recodeTime(paratime);
   postresult(url1, correctrate, time);
@@ -36,7 +36,7 @@ function endtest1(paratime) {
 function endtest2(paratime) {
   'use strict';
   var correctrate = correctrate2;
-  var url2 = '/saveemtest2';
+  var url2 = '/saveemtest4';
   var time = recodeTime(paratime);
   postresult(url2, correctrate, time);
   clearTime();
@@ -97,8 +97,9 @@ function countDownTime(currentTime, picUrl) {
   if (picUrl === '0') {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
+        correctrate1 += '0';
+        endtest1(8000);
         clearInterval(timedown);
-        endtest1();
       }
       $('#timedown').text(currentTime);
       currentTime--;
@@ -106,6 +107,7 @@ function countDownTime(currentTime, picUrl) {
   } else {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
+        correctrate1 += '0';
         clearInterval(timedown);
         recodeTime('8000');
         $('#pictureurl').attr('src', picUrl);
@@ -115,6 +117,33 @@ function countDownTime(currentTime, picUrl) {
     }, 1000);
   }
 }
+
+function countDownTime2(currentTime, picUrl) {
+  'use strict';
+  if (picUrl === '0') {
+    timedown = setInterval(function () {
+      if (currentTime <= 0) {
+        correctrate2 += '0';
+        endtest2(8000);
+        clearInterval(timedown);
+      }
+      $('#timedown').text(currentTime);
+      currentTime--;
+    }, 1000);
+  } else {
+    timedown = setInterval(function () {
+      if (currentTime <= 0) {
+        correctrate2 += '0';
+        recodeTime('8000');
+        clearInterval(timedown);
+        $('#pictureurl2').attr('src', picUrl);
+      }
+      $('#timedown').text(currentTime);
+      currentTime--;
+    }, 1000);
+  }
+}
+
 
 $(document).ready(function ($){
   'use strict';
@@ -184,15 +213,24 @@ $(document).ready(function ($){
     console.log(usetime);
   });
 
+  $('#pictureurl2').load(function () {
+    var d1 = new Date();
+    time1 = d1.getTime();
+    flag++;
+    countDownTime2(8, urls1[flag]);
+    console.log(flag);
+    console.log(usetime);
+  });
+
   function clickChangePic(para) {
     var d2 = new Date();
     time2 = d2.getTime();
     var usetime1 = time2 - time1;
     var url = $('#pictureurl').attr('src');
     isChooseTrue(url, para);
-    recodeTime(usetime1);
     clearInterval(timedown);
     if (urls1[flag] !== '0') {
+      recodeTime(usetime1);
       $('#pictureurl').attr('src', urls1[flag]);
     } else {
       endtest1(usetime1);
@@ -205,6 +243,8 @@ $(document).ready(function ($){
     });//打乱顺序
     $('#description1').hide();
     $('#testcontent').show();
+    $('#pictureurl').show();
+    $('#pictureurl2').hide();
     $('#in').show();
     $('#out').show();
     $('#yes').hide();
@@ -232,12 +272,12 @@ $(document).ready(function ($){
     var d2 = new Date();
     time2 = d2.getTime();
     var usetime2 = time2 - time1;
-    var url = $('#pictureurl').attr('src');
+    var url = $('#pictureurl2').attr('src');
     isTrue(url, para);
-    recodeTime(usetime2);
     clearInterval(timedown);
     if (urls2[flag] !== '0') {
-      $('#pictureurl').attr('src', urls2[flag]);
+      recodeTime(usetime2);
+      $('#pictureurl2').attr('src', urls2[flag]);
     } else {
       endtest2(usetime2);
     }
@@ -251,13 +291,15 @@ $(document).ready(function ($){
     flag = 0;
     $('#description2').hide();
     $('#testcontent').show();
+    $('#pictureurl').show();
+    $('#pictureurl2').hide();
     $('#in').hide();
     $('#out').hide();
     $('#yes').show();
     $('#maybe').show();
     $('#no').show();
     urls2[32] = '0';
-    $('#pictureurl').attr('src', urls2[0]);
+    $('#pictureurl2').attr('src', urls2[0]);
   });
 
   //第二次测试按钮事件

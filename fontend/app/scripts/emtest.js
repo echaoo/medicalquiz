@@ -206,9 +206,9 @@ $(document).ready(function ($) {
     var usetime1 = time2 - time1;
     var url = $('#pictureurl').attr('src');
     isChooseTrue(url, para);
-    recodeTime(usetime1);
     clearInterval(timedown);
     if (urls[flag] !== '0') {
+      recodeTime(usetime1);
       $('#pictureurl').attr('src', urls[flag]);
     } else {
       endtest1(usetime1);
@@ -252,9 +252,9 @@ $(document).ready(function ($) {
     var usetime2 = time2 - time1;
     //var url = $('#pictureurl').attr('src');
     isTrue(para);
-    recodeTime(usetime2);
     clearInterval(timedown);
     if (urls[flag] !== '0') {
+      recodeTime(usetime2);
       $('#pictureurl2').attr('src', urls[flag]);
     } else {
       endtest2(usetime2);

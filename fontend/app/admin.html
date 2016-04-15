@@ -52,27 +52,68 @@
   </nav>
 
   <div class="row marketing">
-    <h3>管理列表</h3>
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>序号</th>
-        <th>病人编号(点击看详情)</th>
-        <th>Datum测试分数</th>
-        <th>MMSE测试分数</th>
-        <th>测试详情</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="testInfo:${testInfos}">
-        <td th:text="${testInfo.id}">id</td>
-        <td th:text="${testInfo.userid}">userid</td>
-        <td th:text="${testInfo.datumscore}">分数1</td>
-        <td th:text="${testInfo.mmsetestscore}">分数2</td>
-        <td><a th:href="@{/testdetail(testid=${testInfo.id})}">详情</a></td>
-      </tr>
-      </tbody>
-    </table>
+    <div>
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">测试信息列表</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">病人信息列表</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">EM测试列表</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+          <table class="table table-striped" style="margin-top: 20px">
+            <thead>
+            <tr>
+              <th>序号</th>
+              <th>病人编号(点击看详情)</th>
+              <th>Datum测试分数</th>
+              <th>MMSE测试分数</th>
+              <th>测试详情</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="testInfo:${testInfos}">
+              <td th:text="${testInfo.id}">id</td>
+              <td><a class="btn btn-sm btn-primary" th:text="${testInfo.userid}" th:href="@{/userdetail(userid=${testInfo.userid})}">用户id</a></td>
+              <td th:text="${testInfo.datumscore}">分数1</td>
+              <td th:text="${testInfo.mmsetestscore}">分数2</td>
+              <td><a th:href="@{/testdetail(testid=${testInfo.id})}">详情</a></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="profile">
+          <table class="table table-striped" style="margin-top: 20px">
+            <thead>
+            <tr>
+              <th>序号</th>
+              <th>病人姓名</th>
+              <th>手机号</th>
+              <th>年龄</th>
+              <th>详情</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="userInfo:${userInfos}">
+              <td th:text="${userInfo.id}">id</td>
+              <td th:text="${userInfo.name}">姓名</td>
+              <td th:text="${userInfo.phonenumber}">手机号</td>
+              <td th:text="${userInfo.year}">年龄</td>
+              <td><a class="btn btn-sm btn-success" th:href="@{/userdetail(userid=${userInfo.id})}">详情</a></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="messages">
+          <h1>未完工</h1>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
 

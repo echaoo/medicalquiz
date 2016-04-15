@@ -73,7 +73,7 @@ function isTrue(choose) {
     correctrate2 += '1';
   } else if (choose === 'maybe') {
     correctrate2 += '2';
-  } else{
+  } else {
     correctrate2 += '0';
   }
 }
@@ -90,7 +90,7 @@ function countDownTime(currentTime, picUrl) {
       $('#timedown').text(currentTime);
       currentTime--;
     }, 1000);
-  }  else {
+  } else {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
         recodeTime('8000');

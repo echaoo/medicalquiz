@@ -35,4 +35,9 @@ public class EMTestController {
         return "index";//无意义,此处用ajax提交的表单,返回index只是为了不报错
     }
 
+    @RequestMapping(value = "/saveemtest2", method = RequestMethod.POST)
+    public String dealemtest2(String correct, String time) {
+        emTestService.dealemtest2(correct, time);
+        return "index";
+    }
 }

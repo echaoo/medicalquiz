@@ -57,62 +57,62 @@
       <div class="row">
         <h3 class="text-strong">一、基本资料：</h3>
         <div class="col-md-6">
-          <h4 class="text-strong">姓名：<span>name</span></h4>
+          <h4 class="text-strong">姓名：<span th:text="${userinfo.name}">name</span></h4>
         </div>
         <div class="col-md-6">
-          <h4 class="text-strong">性别：<span>sex</span></h4>
+          <h4 class="text-strong">性别：<span th:text="${userinfo.sex}">sex</span></h4>
         </div>
         <div class="col-md-6">
-          <h4 class="text-strong">年龄：<span>year</span></h4>
+          <h4 class="text-strong">年龄：<span th:text="${userinfo.year}">year</span></h4>
         </div>
         <div class="col-md-6">
-          <h4 class="text-strong">住院号： <span>number</span></h4>
+          <h4 class="text-strong">住院号： <span th:text="${userinfo.number}">number</span></h4>
         </div>
         <div class="col-md-6">
-          <h4 class="text-strong">出生日期：<span>birthtime</span></h4>
+          <h4 class="text-strong">出生日期：<span th:text="${userinfo.birthtime}">birthtime</span></h4>
         </div>
         <div class="col-md-6">
-        <h4 class="text-strong">文化：<span>education</span></h4>
+        <h4 class="text-strong">文化：<span th:text="${userinfo.education}">education</span></h4>
       </div>
       <div class="col-md-6">
-        <h4 class="text-strong">职业：<span> occupation</span></h4>
+        <h4 class="text-strong">职业：<span th:text="${userinfo.occupation}"> occupation</span></h4>
       </div>
       <div class="col-md-6">
-        <h4 class="text-strong">婚姻情况： <span>number</span></h4>
+        <h4 class="text-strong">婚姻情况： <span th:text="${userinfo.marital}">number</span></h4>
       </div>
         <div class="col-md-6">
-          <h4 class="text-strong">居住情况：<span>sex</span></h4>
+          <h4 class="text-strong">居住情况：<span th:text="${userinfo.live}">sex</span></h4>
         </div>
         <div class="col-md-6">
-          <h4 class="text-strong">长期居住于： <span>number</span></h4>
+          <h4 class="text-strong">长期居住于： <span th:text="${userinfo.wherelive}">number</span></h4>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">&nbsp</div>
         <h3 class="text-strong">二、既往史</h3>
         <div class="col-md-4">
-          <h4 class="text-strong">高血压：<span>Y/N;</span></h4>
+          <h4 class="text-strong">高血压：<span th:text="${userinfo.hypertension}">Y/N;</span></h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">患病时长：<span>hyptime；</span></h4>
+          <h4 class="text-strong">患病时长：<span th:text="${userinfo.hypertensiontime}">hyptime；</span></h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">最高<span>hyptime；</span>mmHg</h4>
+          <h4 class="text-strong">最高<span th:text="${userinfo.hypertionsion}">hyptime；</span>mmHg</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">糖尿病：<span>Y/N;</span></h4>
+          <h4 class="text-strong">糖尿病：<span th:text="${userinfo.diabetes}">Y/N;</span></h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">患病时长：<span>hyptime；</span></h4>
+          <h4 class="text-strong">患病时长：<span th:text="${userinfo.diabetestime}">hyptime；</span></h4>
         </div>
         <div class="col-md-4">
           <h4 class="text-strong">&nbsp;</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">高血脂：<span>Y/N;</span></h4>
+          <h4 class="text-strong">高血脂：<span th:text="${userinfo.hyperlipemia}">Y/N;</span></h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">患病时长：<span>hyptime；</span></h4>
+          <h4 class="text-strong">患病时长：<span th:text="${userinfo.hyperlipemiatime}">hyptime；</span></h4>
         </div>
         <div class="col-md-4">
           <h4 class="text-strong">&nbsp;</h4>
@@ -121,55 +121,55 @@
           <h4 class="text-strong">3个月内检查血脂数据：</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">1、LDL-C:<span>L</span>mmol/L</h4>
+          <h4 class="text-strong">1、LDL-C:<span th:text="${userinfo.LDLC}">L</span>mmol/L</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">2、HDL-C:<span>H;</span>mmol/L；</h4>
+          <h4 class="text-strong">2、HDL-C:<span th:text="${userinfo.HDLC}">H;</span>mmol/L；</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">3、TC:<span>TC；</span>mmol/L；</h4>
+          <h4 class="text-strong">3、TC:<span th:text="${userinfo.TC}">TC；</span>mmol/L；</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">4、TG<span>TG</span>mmol/L；</h4>
+          <h4 class="text-strong">4、TG:<span th:text="${userinfo.TG}">TG</span>mmol/L；</h4>
         </div>
         <div class="col-md-4">
           <h4 class="text-strong">&nbsp;</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">心血管病：<span>Y/N;</span></h4>
+          <h4 class="text-strong">心血管病：<span th:text="${userinfo.angiocardiopathy}">Y/N;</span></h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">心绞痛：<span>time；</span>年；</h4>
+          <h4 class="text-strong">心绞痛：<span th:text="${userinfo.heartpaintime}">time；</span>年；</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">心肌梗死：<span>time</span>年；</h4>
+          <h4 class="text-strong">心肌梗死：<span th:text="${userinfo.myocardial}">time</span>年；</h4>
         </div>
         <div class="col-md-12">
-          <h4 class="text-strong">心房纤颤：<span>time</span>年；</h4>
+          <h4 class="text-strong">心房纤颤：<span th:text="${userinfo.AF}">time</span>年；</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">脑血管病：<span>Y/N;</span></h4>
+          <h4 class="text-strong">脑血管病：<span th:text="${userinfo.ACVD}">Y/N;</span></h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">脑出血：<span>time；</span>年；</h4>
+          <h4 class="text-strong">脑出血：<span th:text="${userinfo.headblood}">time；</span>年；</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">脑梗：<span>time</span>年；</h4>
+          <h4 class="text-strong">脑梗：<span th:text="${userinfo.chocke}">time</span>年；</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">脑梗死：<span>time</span>年；</h4>
+          <h4 class="text-strong">脑梗死：<span th:text="${userinfo.headchocke}">time</span>年；</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">TIA：<span>time；</span>年；</h4>
+          <h4 class="text-strong">TIA：<span th:text="${userinfo.TIA}">time；</span>年；</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">脑外伤：<span>time</span>年；</h4>
+          <h4 class="text-strong">脑外伤：<span th:text="${userinfo.headhurt}">time</span>年；</h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">闹病变部位：<span>where</span></h4>
+          <h4 class="text-strong">闹病变部位：<span th:text="${userinfo.illposition}">where</span></h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">病变大小：<span>hyptime；</span></h4>
+          <h4 class="text-strong">病变大小：<span th:text="${userinfo.illlevel}">hyptime；</span></h4>
         </div>
         <div class="col-md-4">
           <h4 class="text-strong">&nbsp;</h4>
@@ -179,28 +179,28 @@
         <div class="col-md-12">&nbsp</div>
         <h3 class="text-strong">三、生活习惯</h3>
         <div class="col-md-4">
-          <h4 class="text-strong">饮酒状况：<span>drink</span></h4>
+          <h4 class="text-strong">饮酒状况：<span th:text="${userinfo.drinkstate}">drink</span></h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">抽烟状况：<span>smoke</span></h4>
+          <h4 class="text-strong">抽烟状况：<span th:text="${userinfo.smoke}">smoke</span></h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">喝茶情况：<span>tea</span></h4>
+          <h4 class="text-strong">喝茶情况：<span th:text="${userinfo.isdrinktea}">tea</span></h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">睡眠情况：<span>sleep</span></h4>
+          <h4 class="text-strong">睡眠情况：<span th:text="${userinfo.sleepstate}">sleep</span></h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">锻炼情况：<span>PEstate</span></h4>
+          <h4 class="text-strong">锻炼情况：<span th:text="${userinfo.PEstate}">PEstate</span></h4>
         </div>
         <div class="col-md-4">
-          <h4 class="text-strong">社交情况：<span>socialstate</span></h4>
+          <h4 class="text-strong">社交情况：<span th:text="${userinfo.socialstate}">socialstate</span></h4>
         </div>
         <div class="col-md-12">
-          <h4 class="text-strong">业余爱好：<span>hobby</span></h4>
+          <h4 class="text-strong">业余爱好：<span th:text="${userinfo.hobby}">hobby</span></h4>
         </div>
         <div class="col-md-12">
-          <h4 class="text-strong">饮食情况：<span>eat</span></h4>
+          <h4 class="text-strong">饮食情况：<span th:text="${userinfo.eathabits}">eat</span></h4>
         </div>
         <div style="text-align: center">
           <a class="btn btn-success"  href="javascript:history.go(-1);">返回</a>

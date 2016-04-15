@@ -16,7 +16,7 @@ public class EMTestInfo {
     private int userid;
 
     private double correctrate1;    //编码测试正确率
-    private int avecorrecttime;  //回答正确平均用时
+    private int avecorrecttime1;  //回答正确平均用时
     private String usetime1;    //编码测试使用时间详情
     private String detail1;     //选择详情
 

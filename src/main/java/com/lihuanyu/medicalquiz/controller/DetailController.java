@@ -1,5 +1,7 @@
 package com.lihuanyu.medicalquiz.controller;
 
+import com.lihuanyu.medicalquiz.model.BasicInfo;
+import com.lihuanyu.medicalquiz.model.BasicInfoDao;
 import com.lihuanyu.medicalquiz.model.TestInfo;
 import com.lihuanyu.medicalquiz.model.TestInfoDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,16 @@ public class DetailController {
 
     @Autowired
     private TestInfoDao testInfoDao;
+
+    @Autowired
+    private BasicInfoDao basicInfoDao;
+
+    @RequestMapping("/userdetail")
+    public String showUserDetail(int userid, Model model) {
+        BasicInfo basicInfo = basicInfoDao.findOne(userid);
+        model.addAttribute("userinfo",basicInfo);
+        return "usersdetail";
+    }
 
     @RequestMapping("/testdetail")
     public String showTestDetail(int testid, Model model) {

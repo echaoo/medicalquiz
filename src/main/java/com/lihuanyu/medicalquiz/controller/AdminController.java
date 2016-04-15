@@ -17,6 +17,9 @@ import java.util.Collection;
 public class AdminController {
 
     @Autowired
+    private EMTestInfoDao emTestInfoDao;
+
+    @Autowired
     private BasicInfoDao basicInfoDao;
 
     @Autowired
@@ -53,6 +56,8 @@ public class AdminController {
             model.addAttribute("testInfos",testInfos);
             Iterable<BasicInfo> basicInfos = basicInfoDao.findAll();
             model.addAttribute("userInfos",basicInfos);
+            Iterable<EMTestInfo> emTestInfos = emTestInfoDao.findAll();
+            model.addAttribute("emTestInfos",emTestInfos);
             return "admin";
         }
     }

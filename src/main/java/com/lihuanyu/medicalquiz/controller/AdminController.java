@@ -17,6 +17,9 @@ import java.util.Collection;
 public class AdminController {
 
     @Autowired
+    private BasicInfoDao basicInfoDao;
+
+    @Autowired
     private TestInfoDao testInfoDao;
 
     @Autowired
@@ -50,17 +53,10 @@ public class AdminController {
         }else {
             Iterable<TestInfo> testInfos = testInfoDao.findAll();
             model.addAttribute("testInfos",testInfos);
+            Iterable<BasicInfo> basicInfos = basicInfoDao.findAll();
+            model.addAttribute("userInfos",basicInfos);
             return "admin";
         }
-    }
-
-    @RequestMapping("/detail")
-    public String showDetail(int admissionnum, int admnum, int number, Model model) {
-        //Collection<Participator> participator = participatorDao.findByAdmissionnum(admissionnum);
-        //model.addAttribute("participator", participator);
-        //Collection<Datum> datum = datumDao.findByAdmnum(admnum);
-        //model.addAttribute("datum", datum);
-        return "detail";//显示整张调查表的内容和结果
     }
 
 }

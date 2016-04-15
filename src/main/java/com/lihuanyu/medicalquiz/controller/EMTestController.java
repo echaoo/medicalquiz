@@ -49,4 +49,16 @@ public class EMTestController {
         emTestService.dealemtest2(correct, time);
         return "index";
     }
+
+    @RequestMapping(value = "/saveemtest3", method = RequestMethod.POST)
+    public String dealemtest3(String correct, String time) {
+        emTestService.dealemtest3(correct, time);
+        return "index";
+    }
+
+    @RequestMapping(value = "/saveemtest4", method = RequestMethod.POST)
+    public String dealemtest4(String correct, String time) {
+        emTestService.dealemtest4(correct, time);
+        return "index";
+    }
 }

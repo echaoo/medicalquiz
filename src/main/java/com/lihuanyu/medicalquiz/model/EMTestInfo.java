@@ -22,7 +22,6 @@ public class EMTestInfo {
 
     private double correctrate2;    //编码第二次正确率
     private int avecorrecttime2;
-    private double REM;
     private String usetime2;    //第二次使用时间详情
     private String detail2;
 
@@ -100,14 +99,6 @@ public class EMTestInfo {
 
     public void setAvecorrecttime2(int avecorrecttime2) {
         this.avecorrecttime2 = avecorrecttime2;
-    }
-
-    public double getREM() {
-        return REM;
-    }
-
-    public void setREM(double REM) {
-        this.REM = REM;
     }
 
     public String getUsetime2() {

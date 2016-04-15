@@ -22,20 +22,28 @@ public class RegController {
     @Autowired
     private HttpSession httpSession;
 
-    @RequestMapping("/changeinfo")
-    public String changeInfo(){ return "regpage"; }
+    @RequestMapping(value = "/savechangeinfo", method = RequestMethod.POST)
+    public String dealChangeInfo(String sex, String age, String number, String birth, String education, String occupation, String marital, String wherelive, String live, String hypertension, String hypertensiontime, String hypertionsion, String diabetes, String diabetestime, String hyperlipemia, String hyperlipemiatime, String LDLC, String HDLC, String TC, String TG, String angiocardiopathy, String heartpaintime, String myocardial, String AF, String ACVD, String headblood, String chocke, String headchocke, String TIA, String headhurt, String illposition, String illlevel, String drinkstate, String smoke, String isdrinktea, String sleepstate, String PEstate, String socialstate, String hobby, String eathabits) {
+        if (!regService.checkMessage("", "", sex, age, number, birth, education, occupation, marital, wherelive, live, hypertension, hypertensiontime, hypertionsion, diabetes, diabetestime, hyperlipemia, hyperlipemiatime, LDLC, HDLC, TC, TG, angiocardiopathy, heartpaintime, myocardial, AF, ACVD, headblood, chocke, headchocke, TIA, headhurt, illposition, illlevel, drinkstate, smoke, isdrinktea, sleepstate, PEstate, socialstate, hobby, eathabits)) {
+            return "error";
+        }
 
-    @RequestMapping(value = "/savenew",method = RequestMethod.POST)
-    public String dealReg(String phone, String name, String sex, String age, String number, String birth, String education, String occupation, String marital, String wherelive, String live, String hypertension, String hypertensiontime, String hypertionsion, String diabetes, String diabetestime, String hyperlipemia, String hyperlipemiatime, String LDLC, String HDLC, String TC, String TG, String angiocardiopathy, String heartpaintime, String myocardial, String AF, String ACVD, String headblood, String chocke, String headchocke, String TIA, String headhurt, String illposition, String illlevel, String drinkstate, String smoke, String isdrinktea, String sleepstate, String PEstate, String socialstate, String hobby, String eathabits){
+        BasicInfo basicInfo = regService.dealChangeInfo(sex, age, number, birth, education, occupation, marital, wherelive, live, hypertension, hypertensiontime, hypertionsion, diabetes, diabetestime, hyperlipemia, hyperlipemiatime, LDLC, HDLC, TC, TG, angiocardiopathy, heartpaintime, myocardial, AF, ACVD, headblood, chocke, headchocke, TIA, headhurt, illposition, illlevel, drinkstate, smoke, isdrinktea, sleepstate, PEstate, socialstate, hobby, eathabits);
+        regService.saveToDatabase(basicInfo);
+        return "personal";
+    }
 
-        if (!regService.checkMessage(phone, name, sex, age, number, birth, education, occupation, marital, wherelive, live, hypertension, hypertensiontime, hypertionsion, diabetes, diabetestime, hyperlipemia, hyperlipemiatime, LDLC, HDLC, TC, TG, angiocardiopathy, heartpaintime, myocardial, AF, ACVD, headblood, chocke, headchocke, TIA, headhurt, illposition, illlevel, drinkstate, smoke, isdrinktea, sleepstate, PEstate, socialstate, hobby, eathabits)){
+    @RequestMapping(value = "/savenew", method = RequestMethod.POST)
+    public String dealReg(String phone, String name, String sex, String age, String number, String birth, String education, String occupation, String marital, String wherelive, String live, String hypertension, String hypertensiontime, String hypertionsion, String diabetes, String diabetestime, String hyperlipemia, String hyperlipemiatime, String LDLC, String HDLC, String TC, String TG, String angiocardiopathy, String heartpaintime, String myocardial, String AF, String ACVD, String headblood, String chocke, String headchocke, String TIA, String headhurt, String illposition, String illlevel, String drinkstate, String smoke, String isdrinktea, String sleepstate, String PEstate, String socialstate, String hobby, String eathabits) {
+
+        if (!regService.checkMessage(phone, name, sex, age, number, birth, education, occupation, marital, wherelive, live, hypertension, hypertensiontime, hypertionsion, diabetes, diabetestime, hyperlipemia, hyperlipemiatime, LDLC, HDLC, TC, TG, angiocardiopathy, heartpaintime, myocardial, AF, ACVD, headblood, chocke, headchocke, TIA, headhurt, illposition, illlevel, drinkstate, smoke, isdrinktea, sleepstate, PEstate, socialstate, hobby, eathabits)) {
             return "error";
         }
 
         BasicInfo basicInfo = regService.dealMessage(phone, name, sex, age, number, birth, education, occupation, marital, wherelive, live, hypertension, hypertensiontime, hypertionsion, diabetes, diabetestime, hyperlipemia, hyperlipemiatime, LDLC, HDLC, TC, TG, angiocardiopathy, heartpaintime, myocardial, AF, ACVD, headblood, chocke, headchocke, TIA, headhurt, illposition, illlevel, drinkstate, smoke, isdrinktea, sleepstate, PEstate, socialstate, hobby, eathabits);
 
         regService.saveToDatabase(basicInfo);
-        httpSession.setAttribute("phone",phone);
+        httpSession.setAttribute("phone", phone);
         return "datumtest";
     }
 

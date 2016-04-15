@@ -29,6 +29,15 @@ public class EMTestController {
         }
     }
 
+    @RequestMapping("/emtest2")
+    public String showEmTest2() {
+        if (httpSession.getAttribute("userid") != null) {
+            return "emtest2";
+        } else {
+            return "index";
+        }
+    }
+
     @RequestMapping(value = "/saveemtest1", method = RequestMethod.POST)
     public String dealemtest1(String correct, String time) {
         emTestService.dealemtest1(correct, time);

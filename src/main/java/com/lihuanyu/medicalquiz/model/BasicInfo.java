@@ -1,6 +1,7 @@
 package com.lihuanyu.medicalquiz.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by echao on 2016/3/8.
@@ -13,7 +14,9 @@ public class BasicInfo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @NotNull
     private String name;
+    @Column(name = "phonenumber", nullable = false, unique = true)
     private String phonenumber;
 
     //人口学资料

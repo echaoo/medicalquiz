@@ -120,13 +120,13 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <th>id</th>
-              <th>correctrate1</th>
-              <th>usetime1</th>
-              <th>correctrate2</th>
-              <th>usetime1</th>
-              <th>详情</th>
+            <tr th:each="emtestInfo:${emTestInfos}">
+              <th th:text="${emtestInfo.id}">id</th>
+              <th th:text="${emtestInfo.correctrate1}">correctrate1</th>
+              <th th:text="${emtestInfo.avecorrecttime1}">usetime1</th>
+              <th th:text="${emtestInfo.correctrate4}">correctrate2</th>
+              <th th:text="${emtestInfo.avecorrecttime4}">usetime1</th>
+              <td><a class="btn btn-sm btn-success" th:href="@{/emdetail(testid=${emtestInfo.id})}">详情</a></td>
             </tr>
             </tbody>
           </table>

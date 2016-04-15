@@ -101,11 +101,11 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="testInfo:${emtestInfos}">
-          <td th:text="${testInfo.id}">id</td>
-          <td th:text="${testInfo.correctrate1}">分数1</td>
-          <td th:text="${testInfo.correctrate4}">分数2</td>
-          <td><a th:href="@{/emdetail(testid=${testInfo.id})}">详情</a></td>
+        <tr th:each="emtestInfo:${emtestInfos}">
+          <td th:text="${emtestInfo.id}">id</td>
+          <td th:text="${emtestInfo.correctrate1}">分数1</td>
+          <td th:text="${emtestInfo.correctrate4}">分数2</td>
+          <td><a th:href="@{/emdetail(testid=${emtestInfo.id})}">详情</a></td>
         </tr>
         </tbody>
       </table>

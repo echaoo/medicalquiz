@@ -217,7 +217,7 @@ $(document).ready(function ($){
     var d1 = new Date();
     time1 = d1.getTime();
     flag++;
-    countDownTime2(8, urls1[flag]);
+    countDownTime2(8, urls2[flag]);
     console.log(flag);
     console.log(usetime);
   });
@@ -291,8 +291,8 @@ $(document).ready(function ($){
     flag = 0;
     $('#description2').hide();
     $('#testcontent').show();
-    $('#pictureurl').show();
-    $('#pictureurl2').hide();
+    $('#pictureurl2').show();
+    $('#pictureurl').hide();
     $('#in').hide();
     $('#out').hide();
     $('#yes').show();

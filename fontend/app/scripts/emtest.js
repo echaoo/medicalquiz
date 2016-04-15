@@ -103,6 +103,32 @@ function countDownTime(currentTime, picUrl) {
   }
 }
 
+function countDownTime2(currentTime, picUrl) {
+  'use strict';
+  if (picUrl === '0') {
+    timedown = setInterval(function () {
+      if (currentTime <= 0) {
+        correctrate2 += '0';
+        endtest2(8000);
+        clearInterval(timedown);
+      }
+      $('#timedown').text(currentTime);
+      currentTime--;
+    }, 1000);
+  } else {
+    timedown = setInterval(function () {
+      if (currentTime <= 0) {
+        recodeTime('8000');
+        correctrate2 += '0';
+        clearInterval(timedown);
+        $('#pictureurl2').attr('src', picUrl);
+      }
+      $('#timedown').text(currentTime);
+      currentTime--;
+    }, 1000);
+  }
+}
+
 $(document).ready(function ($) {
 
   'use strict';
@@ -164,6 +190,16 @@ $(document).ready(function ($) {
     console.log(correctrate1);
   });
 
+  $('#pictureurl2').load(function () {
+    var d1 = new Date();
+    time1 = d1.getTime();
+    flag++;
+    countDownTime2(8, urls[flag]);
+    console.log(flag);
+    console.log(usetime);
+    console.log(correctrate1);
+  });
+
   function clickChangePic(para) {
     var d2 = new Date();
     time2 = d2.getTime();
@@ -185,6 +221,8 @@ $(document).ready(function ($) {
     });//打乱顺序
     $('#description1').hide();
     $('#testcontent').show();
+    $('#pictureurl').show();
+    $('#pictureurl2').hide();
     $('#in').show();
     $('#out').show();
     $('#yes').hide();
@@ -217,7 +255,7 @@ $(document).ready(function ($) {
     recodeTime(usetime2);
     clearInterval(timedown);
     if (urls[flag] !== '0') {
-      $('#pictureurl').attr('src', urls[flag]);
+      $('#pictureurl2').attr('src', urls[flag]);
     } else {
       endtest2(usetime2);
     }
@@ -228,13 +266,15 @@ $(document).ready(function ($) {
     flag = 0;
     $('#description2').hide();
     $('#testcontent').show();
+    $('#pictureurl2').show();
+    $('#pictureurl').hide();
     $('#in').hide();
     $('#out').hide();
     $('#yes').show();
     $('#maybe').show();
     $('#no').show();
     urls[40] = '0';
-    $('#pictureurl').attr('src', urls[0]);
+    $('#pictureurl2').attr('src', urls[0]);
   });
 
   //第二次测试按钮事件

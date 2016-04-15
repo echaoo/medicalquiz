@@ -1,7 +1,6 @@
 package com.lihuanyu.medicalquiz.controller;
 
 import com.lihuanyu.medicalquiz.model.BasicInfo;
-import com.lihuanyu.medicalquiz.model.BasicInfoDao;
 import com.lihuanyu.medicalquiz.services.RegService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,7 +29,7 @@ public class RegController {
 
         BasicInfo basicInfo = regService.dealChangeInfo(sex, age, number, birth, education, occupation, marital, wherelive, live, hypertension, hypertensiontime, hypertionsion, diabetes, diabetestime, hyperlipemia, hyperlipemiatime, LDLC, HDLC, TC, TG, angiocardiopathy, heartpaintime, myocardial, AF, ACVD, headblood, chocke, headchocke, TIA, headhurt, illposition, illlevel, drinkstate, smoke, isdrinktea, sleepstate, PEstate, socialstate, hobby, eathabits);
         regService.saveToDatabase(basicInfo);
-        return "personal";
+        return "redirect:/usercenter";
     }
 
     @RequestMapping(value = "/savenew", method = RequestMethod.POST)

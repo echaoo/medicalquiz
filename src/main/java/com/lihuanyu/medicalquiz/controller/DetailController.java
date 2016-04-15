@@ -24,7 +24,7 @@ public class DetailController {
     @RequestMapping("/emdetail")
     public String showEMTestDetail(int testid, Model model){
         EMTestInfo emTestInfo = emTestInfoDao.findOne(testid);
-        model.addAttribute("emTestInfo",emTestInfo);
+        model.addAttribute("emtestinfo",emTestInfo);
         return "emdetail";
     }
 

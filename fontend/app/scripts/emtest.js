@@ -83,9 +83,8 @@ function countDownTime(currentTime, picUrl) {
     timedown = setInterval(function () {
       if (currentTime <= 0) {
         correctrate1 += '2';
-        recodeTime('8000');
+        endtest1(8000);
         clearInterval(timedown);
-        endtest1();
       }
       $('#timedown').text(currentTime);
       currentTime--;

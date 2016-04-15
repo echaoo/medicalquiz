@@ -59,6 +59,7 @@ body {
   }
 }
 
+
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
@@ -99,4 +100,16 @@ body {
 /*result自定义样式*/
 .space{
   margin-top: 40px;
+}
+.jumbotron2 {
+  border-bottom: 1px solid #e5e5e5;
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+.text-strong{
+  font-family: 微软雅黑, serif;
+  font-weight:500;
 }

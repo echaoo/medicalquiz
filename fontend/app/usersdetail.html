@@ -1,0 +1,241 @@
+<!doctype html>
+<html class="no-js" lang="" xmlns="http://www.w3.org/1/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>测试者详情</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="container">
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">VCI/CVD评估</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="/">首页</a></li>
+          <li><a href="about">关于</a></li>
+          <li><a href="help">帮助</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>
+
+  <div class="jumbotron2">
+    <h2 style="text-align: center">用户资料</h2>
+    <div class="container-fluid">
+      <div class="row">
+        <h3 class="text-strong">一、基本资料：</h3>
+        <div class="col-md-6">
+          <h4 class="text-strong">姓名：<span>name</span></h4>
+        </div>
+        <div class="col-md-6">
+          <h4 class="text-strong">性别：<span>sex</span></h4>
+        </div>
+        <div class="col-md-6">
+          <h4 class="text-strong">年龄：<span>year</span></h4>
+        </div>
+        <div class="col-md-6">
+          <h4 class="text-strong">住院号： <span>number</span></h4>
+        </div>
+        <div class="col-md-6">
+          <h4 class="text-strong">出生日期：<span>birthtime</span></h4>
+        </div>
+        <div class="col-md-6">
+        <h4 class="text-strong">文化：<span>education</span></h4>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-strong">职业：<span> occupation</span></h4>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-strong">婚姻情况： <span>number</span></h4>
+      </div>
+        <div class="col-md-6">
+          <h4 class="text-strong">居住情况：<span>sex</span></h4>
+        </div>
+        <div class="col-md-6">
+          <h4 class="text-strong">长期居住于： <span>number</span></h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">&nbsp</div>
+        <h3 class="text-strong">二、既往史</h3>
+        <div class="col-md-4">
+          <h4 class="text-strong">高血压：<span>Y/N;</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">患病时长：<span>hyptime；</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">最高<span>hyptime；</span>mmHg</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">糖尿病：<span>Y/N;</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">患病时长：<span>hyptime；</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">&nbsp;</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">高血脂：<span>Y/N;</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">患病时长：<span>hyptime；</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">&nbsp;</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">3个月内检查血脂数据：</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">1、LDL-C:<span>L</span>mmol/L</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">2、HDL-C:<span>H;</span>mmol/L；</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">3、TC:<span>TC；</span>mmol/L；</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">4、TG<span>TG</span>mmol/L；</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">&nbsp;</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">心血管病：<span>Y/N;</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">心绞痛：<span>time；</span>年；</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">心肌梗死：<span>time</span>年；</h4>
+        </div>
+        <div class="col-md-12">
+          <h4 class="text-strong">心房纤颤：<span>time</span>年；</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">脑血管病：<span>Y/N;</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">脑出血：<span>time；</span>年；</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">脑梗：<span>time</span>年；</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">脑梗死：<span>time</span>年；</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">TIA：<span>time；</span>年；</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">脑外伤：<span>time</span>年；</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">闹病变部位：<span>where</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">病变大小：<span>hyptime；</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">&nbsp;</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">&nbsp</div>
+        <h3 class="text-strong">三、生活习惯</h3>
+        <div class="col-md-4">
+          <h4 class="text-strong">饮酒状况：<span>drink</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">抽烟状况：<span>smoke</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">喝茶情况：<span>tea</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">睡眠情况：<span>sleep</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">锻炼情况：<span>PEstate</span></h4>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-strong">社交情况：<span>socialstate</span></h4>
+        </div>
+        <div class="col-md-12">
+          <h4 class="text-strong">业余爱好：<span>hobby</span></h4>
+        </div>
+        <div class="col-md-12">
+          <h4 class="text-strong">饮食情况：<span>eat</span></h4>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <p>♥ from the UPC - skyADMIN & Echaoo</p>
+  </div>
+</div>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js scripts/plugins.js -->
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
+</body>
+</html>

@@ -23,7 +23,7 @@ public class RegService {
         try {
             basicInfoDao.save(basicInfo);
             return true;
-        }catch (Exception ex){
+        } catch (Exception ex) {
             return false;
         }
     }
@@ -51,26 +51,27 @@ public class RegService {
         basicInfo.setWherelive(wherelive);
         basicInfo.setLive(live);
         basicInfo.setHypertension(hypertension.charAt(0));
-        basicInfo.setHypertensiontime(Integer.parseInt(hypertensiontime));
-        basicInfo.setHypertionsion(Integer.parseInt(hypertionsion));
+
+        basicInfo.setHypertensiontime(Integer.parseInt(changeNullToZero(hypertensiontime)));
+        basicInfo.setHypertionsion(Integer.parseInt(changeNullToZero(hypertionsion)));
         basicInfo.setDiabetes(diabetes.charAt(0));
-        basicInfo.setDiabetestime(Integer.parseInt(diabetestime));
+        basicInfo.setDiabetestime(Integer.parseInt(changeNullToZero(diabetestime)));
         basicInfo.setHyperlipemia(hyperlipemia.charAt(0));
-        basicInfo.setHyperlipemiatime(Integer.parseInt(hyperlipemiatime));
-        basicInfo.setLDLC(Integer.parseInt(LDLC));
-        basicInfo.setHDLC(Integer.parseInt(HDLC));
-        basicInfo.setTC(Integer.parseInt(TC));
-        basicInfo.setTG(Integer.parseInt(TG));
+        basicInfo.setHyperlipemiatime(Integer.parseInt(changeNullToZero(hyperlipemiatime)));
+        basicInfo.setLDLC(Integer.parseInt(changeNullToZero(LDLC)));
+        basicInfo.setHDLC(Integer.parseInt(changeNullToZero(HDLC)));
+        basicInfo.setTC(Integer.parseInt(changeNullToZero(TC)));
+        basicInfo.setTG(Integer.parseInt(changeNullToZero(TG)));
         basicInfo.setAngiocardiopathy(angiocardiopathy.charAt(0));
-        basicInfo.setHeartpaintime(Integer.parseInt(heartpaintime));
-        basicInfo.setMyocardial(Integer.parseInt(myocardial));
-        basicInfo.setAF(Integer.parseInt(AF));
+        basicInfo.setHeartpaintime(Integer.parseInt(changeNullToZero(heartpaintime)));
+        basicInfo.setMyocardial(Integer.parseInt(changeNullToZero(myocardial)));
+        basicInfo.setAF(Integer.parseInt(changeNullToZero(AF)));
         basicInfo.setACVD(ACVD.charAt(0));
-        basicInfo.setHeadblood(Integer.parseInt(headblood));
-        basicInfo.setChocke(Integer.parseInt(chocke));
-        basicInfo.setHeadchocke(Integer.parseInt(headchocke));
-        basicInfo.setTIA(TIA.charAt(0));
-        basicInfo.setHeadhurt(Integer.parseInt(headhurt));
+        basicInfo.setHeadblood(Integer.parseInt(changeNullToZero(headblood)));
+        basicInfo.setChocke(Integer.parseInt(changeNullToZero(chocke)));
+        basicInfo.setHeadchocke(Integer.parseInt(changeNullToZero(headchocke)));
+        basicInfo.setTIA(Integer.parseInt(changeNullToZero(TIA)));
+        basicInfo.setHeadhurt(Integer.parseInt(changeNullToZero(headhurt)));
         basicInfo.setIllposition(illposition);
         basicInfo.setIlllevel(illlevel);
         basicInfo.setDrinkstate(drinkstate);
@@ -93,7 +94,7 @@ public class RegService {
     }
 
     public String changeNullToZero(String m) {
-        if (m == null) {
+        if (m.equals("")) {
             return "0";
         } else {
             return m;

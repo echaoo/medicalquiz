@@ -5,6 +5,9 @@ spring:
     url: jdbc:mysql://121.42.201.69:3306/zmk
     username: zmk
     password: 123456
+    test-while-idle: true
+    time-between-eviction-runs-millis: 60000
+    validation-query: SELECT 1
   jpa:
     show-sql: true
     hibernate:

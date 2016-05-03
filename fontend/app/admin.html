@@ -57,7 +57,7 @@
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">测试信息列表</a></li>
-        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">病人信息列表</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">患者信息列表</a></li>
         <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">EM测试列表</a></li>
       </ul>
 
@@ -112,6 +112,7 @@
             <thead>
             <tr>
               <th>序号</th>
+              <th>患者编号</th>
               <th>EM第一阶段测试正确率</th>
               <th>EM第一阶段测试平均时间</th>
               <th>EM第二阶段测试正确率</th>
@@ -121,11 +122,12 @@
             </thead>
             <tbody>
             <tr th:each="emtestInfo:${emTestInfos}">
-              <th th:text="${emtestInfo.id}">id</th>
-              <th th:text="${emtestInfo.correctrate1}">correctrate1</th>
-              <th th:text="${emtestInfo.avecorrecttime1}">usetime1</th>
-              <th th:text="${emtestInfo.correctrate4}">correctrate2</th>
-              <th th:text="${emtestInfo.avecorrecttime4}">usetime1</th>
+              <td th:text="${emtestInfo.id}">id</td>
+              <td><a class="btn btn-sm btn-primary" th:text="${emtestInfo.userid}" th:href="@{/userdetail(userid=${emtestInfo.userid})}">用户id</a></td>
+              <td th:text="${emtestInfo.correctrate1}">correctrate1</td>
+              <td th:text="${emtestInfo.avecorrecttime1}">usetime1</td>
+              <td th:text="${emtestInfo.correctrate4}">correctrate2</td>
+              <td th:text="${emtestInfo.avecorrecttime4}">usetime1</td>
               <td><a class="btn btn-sm btn-success" th:href="@{/emdetail(testid=${emtestInfo.id})}">详情</a></td>
             </tr>
             </tbody>

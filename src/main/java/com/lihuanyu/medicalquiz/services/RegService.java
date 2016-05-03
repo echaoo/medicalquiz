@@ -42,7 +42,7 @@ public class RegService {
         basicInfo.setPhonenumber(phone);
         basicInfo.setName(name);
         basicInfo.setSex(sex.charAt(0));
-        basicInfo.setYear(Integer.parseInt(age));
+        basicInfo.setYear(Integer.parseInt(changeNullToZero(age)));
         basicInfo.setNumber(number);
         basicInfo.setBirthtime(birth);
         basicInfo.setEducation(education);

@@ -43,7 +43,8 @@ public class RegController {
 
         regService.saveToDatabase(basicInfo);
         httpSession.setAttribute("phone", phone);
-        return "datumtest";
+        httpSession.setAttribute("userid",basicInfo.getId());
+        return "redirect:/usercenter";
     }
 
     @RequestMapping("/regnew")
